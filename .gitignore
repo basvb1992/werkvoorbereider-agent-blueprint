@@ -1,0 +1,21 @@
+# Afhankelijkheden / build-output
+node_modules/
+dist/
+build/
+
+# Lokale configuratie & secrets
+.env
+.env.*
+*.local
+power.config.json
+power.config.*.backup.json
+
+# Ingevulde canvas-exports (bevatten mogelijk bedrijfsgegevens)
+*.canvas.json
+ingevuld/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

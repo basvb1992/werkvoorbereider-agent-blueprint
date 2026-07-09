@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Werkvoorbereider Agent Blueprint — Canvas</title>
+<script>
+  (() => {
+    const param = new URLSearchParams(window.location.search).get("scoutTheme");
+    const theme =
+      param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+</script>
+<style>
+:root {
+  color-scheme: light;
+  --cp-bg: #f7f4ef;
+  --cp-bg-elevated: #fcfbf8;
+  --cp-surface: #ffffff;
+  --cp-surface-soft: #f5f5f5;
+  --cp-border: #dedede;
+  --cp-border-strong: #919191;
+  --cp-text: #242424;
+  --cp-text-muted: #5c5c5c;
+  --cp-text-soft: #6f6f6f;
+  --cp-accent: #b11f4b;
+  --cp-accent-hover: #9a1a41;
+  --cp-accent-soft: rgba(177, 31, 75, 0.08);
+  --cp-accent-fg: #ffffff;
+  --cp-success: #16a34a;
+  --cp-danger: #dc2626;
+  --cp-warning: #f59e0b;
+  --cp-link: #0078d4;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
+  --cp-overlay: rgba(255, 255, 255, 0.8);
+  --cp-panel: rgba(255, 255, 255, 0.86);
+  --cp-panel-strong: rgba(255, 255, 255, 0.96);
+  --cp-sheen: rgba(255, 255, 255, 0.55);
+  --cp-highlight: rgba(177, 31, 75, 0.12);
+}
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --cp-bg: #3d3b3a;
+  --cp-bg-elevated: #343231;
+  --cp-surface: #292929;
+  --cp-surface-soft: #2e2e2e;
+  --cp-border: #474747;
+  --cp-border-strong: #5f5f5f;
+  --cp-text: #dedede;
+  --cp-text-muted: #919191;
+  --cp-text-soft: #b0b0b0;
+  --cp-accent: #fd8ea1;
+  --cp-accent-hover: #fb7b91;
+  --cp-accent-soft: rgba(253, 142, 161, 0.14);
+  --cp-accent-fg: #1a1a1a;
+  --cp-success: #4ade80;
+  --cp-danger: #f87171;
+  --cp-warning: #fbbf24;
+  --cp-link: #4da6ff;
+  --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+  --cp-overlay: rgba(41, 41, 41, 0.88);
+  --cp-panel: rgba(41, 41, 41, 0.72);
+  --cp-panel-strong: rgba(41, 41, 41, 0.96);
+  --cp-sheen: rgba(255, 255, 255, 0.04);
+  --cp-highlight: rgba(253, 142, 161, 0.12);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--cp-bg);
+  color: var(--cp-text);
+  font-family: "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.5;
+}
+
+header {
+  background: var(--cp-bg-elevated);
+  border-bottom: 1px solid var(--cp-border);
+  padding: 20px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+header .wrap { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+header h1 { font-size: 1.15rem; margin: 0; flex: 1 1 auto; }
+header .subtitle { color: var(--cp-text-muted); font-size: 0.85rem; margin-top: 2px; }
+
+.toolbar { display: flex; gap: 8px; flex-wrap: wrap; }
+
+button {
+  font-family: inherit;
+  font-size: 0.85rem;
+  border-radius: 0.625rem;
+  border: 1px solid var(--cp-border-strong);
+  background: var(--cp-surface);
+  color: var(--cp-text);
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+button:hover { background: var(--cp-surface-soft); }
+button.primary { background: var(--cp-accent); color: var(--cp-accent-fg); border-color: var(--cp-accent); }
+button.primary:hover { background: var(--cp-accent-hover); border-color: var(--cp-accent-hover); }
+
+.layout { max-width: 1100px; margin: 0 auto; padding: 24px; display: grid; grid-template-columns: 260px 1fr; gap: 24px; }
+@media (max-width: 820px) { .layout { grid-template-columns: 1fr; } }
+
+nav.steps { position: sticky; top: 96px; align-self: start; display: flex; flex-direction: column; gap: 4px; }
+nav.steps button {
+  text-align: left; border: 1px solid transparent; background: transparent; display: flex; gap: 10px; align-items: center; padding: 9px 12px;
+}
+nav.steps button:hover { background: var(--cp-accent-soft); }
+nav.steps button.active { background: var(--cp-accent-soft); border-color: var(--cp-accent); color: var(--cp-accent); font-weight: 600; }
+nav.steps .num { font-variant-numeric: tabular-nums; color: var(--cp-text-soft); font-size: 0.8rem; min-width: 20px; }
+nav.steps button.active .num { color: var(--cp-accent); }
+nav.steps .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--cp-border-strong); margin-left: auto; }
+nav.steps .dot.filled { background: var(--cp-success); }
+
+.progress-wrap { margin-top: 12px; }
+.progress-bar { height: 8px; border-radius: 999px; background: var(--cp-surface-soft); overflow: hidden; border: 1px solid var(--cp-border); }
+.progress-bar > span { display: block; height: 100%; background: var(--cp-accent); width: 0%; transition: width 0.2s; }
+.progress-label { font-size: 0.78rem; color: var(--cp-text-muted); margin-top: 6px; }
+
+main { min-width: 0; }
+.card {
+  background: var(--cp-surface);
+  border: 1px solid var(--cp-border);
+  border-radius: 16px;
+  box-shadow: var(--cp-shadow);
+  padding: 24px;
+}
+.card h2 { margin: 0 0 4px; font-size: 1.25rem; }
+.card .goal { color: var(--cp-text-muted); font-size: 0.9rem; margin: 0 0 20px; padding-bottom: 16px; border-bottom: 1px solid var(--cp-border); }
+
+.field { margin-bottom: 18px; }
+.field label { display: block; font-weight: 600; font-size: 0.9rem; margin-bottom: 4px; }
+.field .hint { display: block; color: var(--cp-text-soft); font-size: 0.8rem; margin-bottom: 6px; }
+.field input, .field textarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 0.9rem;
+  color: var(--cp-text);
+  background: var(--cp-bg-elevated);
+  border: 1px solid var(--cp-border);
+  border-radius: 0.625rem;
+  padding: 10px 12px;
+  resize: vertical;
+}
+.field textarea { min-height: 84px; }
+.field input:focus, .field textarea:focus { outline: none; border-color: var(--cp-accent); box-shadow: 0 0 0 3px var(--cp-accent-soft); }
+.field.mono textarea { font-family: Consolas, "Courier New", Courier, monospace; }
+
+.nav-buttons { display: flex; justify-content: space-between; margin-top: 20px; gap: 12px; }
+
+.footer-note { max-width: 1100px; margin: 0 auto; padding: 0 24px 40px; color: var(--cp-text-soft); font-size: 0.8rem; }
+a { color: var(--cp-link); }
+
+.toast {
+  position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+  background: var(--cp-panel-strong); color: var(--cp-text);
+  border: 1px solid var(--cp-border); border-radius: 0.625rem;
+  padding: 10px 18px; box-shadow: var(--cp-shadow);
+  opacity: 0; pointer-events: none; transition: opacity 0.2s; font-size: 0.85rem;
+}
+.toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div>
+      <h1>Werkvoorbereider Agent Blueprint — Canvas</h1>
+      <div class="subtitle">Vul de 9 stappen in en exporteer je blueprint. Alles blijft lokaal in je browser.</div>
+    </div>
+    <div class="toolbar">
+      <button id="btnTheme" title="Wissel licht/donker">◐ Thema</button>
+      <button id="btnImport">Importeren</button>
+      <button id="btnJson">Export JSON</button>
+      <button id="btnMd" class="primary">Export Markdown</button>
+      <button id="btnReset">Wissen</button>
+      <input type="file" id="fileInput" accept="application/json" style="display:none" />
+    </div>
+  </div>
+</header>
+
+<div class="layout">
+  <nav class="steps" id="nav">
+    <div class="progress-wrap">
+      <div class="progress-bar"><span id="progressFill"></span></div>
+      <div class="progress-label" id="progressLabel">0% ingevuld</div>
+    </div>
+  </nav>
+  <main id="main"></main>
+</div>
+
+<div class="footer-note">
+  Gebaseerd op de blueprint in deze repository. Voorbeelden rond regelgeving (Bbl/NEN)
+  zijn illustratief — laat regelgeving altijd door een bevoegd persoon toetsen.
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const STEPS = [
+  { id: "00", title: "Context & ambitie", goal: "Bepaal wie je bent, waar je staat en wat je wilt bereiken.",
+    fields: [
+      { id: "segment", label: "Segment", type: "text", hint: "B&U-woningbouw / B&U-utiliteit / GWW-infra / installatie E&W / onderhoud" },
+      { id: "rol", label: "Rolinvulling", type: "textarea", hint: "Welke fasen doet jullie werkvoorbereider? (overdracht, werkvoorbereiding, uitvoering, oplevering)" },
+      { id: "niveau", label: "Digitaliseringsniveau", type: "text", hint: "startend / gevorderd / volwassen" },
+      { id: "ambitie", label: "Ambitie", type: "text", hint: "assisteren of automatiseren?" },
+      { id: "randvoorwaarden", label: "Randvoorwaarden", type: "textarea", hint: "security, privacy, IT-beleid, budget, tijd" },
+      { id: "succesmaat", label: "Succesmaat (over 3 maanden)", type: "textarea", hint: "meetbaar, bv. 3 uur/week minder zoekwerk per WVB" }
+    ]},
+  { id: "01", title: "Rol- & taakanalyse", goal: "Breng de losse taken van de werkvoorbereider in kaart.",
+    fields: [
+      { id: "taken", label: "Taken", type: "textarea", mono: true, hint: "Eén taak per regel: taak | fase | frequentie | tijd/keer | pijn (1-5) | waarde (1-5)" },
+      { id: "toptaken", label: "Top-taken (hoogste pijn × waarde)", type: "textarea", hint: "De 1-3 taken die kandidaat zijn voor een agent" }
+    ]},
+  { id: "02", title: "Data-inventarisatie", goal: "Welke data raken de taken, waar staat het, hoe gevoelig.",
+    fields: [
+      { id: "bronnen", label: "Databronnen", type: "textarea", mono: true, hint: "Eén bron per regel: bron | categorie A-H | locatie | formaat | structuur (G/S/O) | gevoeligheid" },
+      { id: "kennis", label: "Kennisbronnen (ongestructureerd → RAG)", type: "textarea", hint: "Bronnen die de agent doorzoekt en samenvat" },
+      { id: "actie", label: "Actiedata (gestructureerd → lezen/schrijven)", type: "textarea", hint: "Records die de agent leest/schrijft via een koppeling" },
+      { id: "aandacht", label: "Aandachtspunten data-kwaliteit & gevoeligheid", type: "textarea", hint: "Opschonen, revisiebeheer, afschermen" }
+    ]},
+  { id: "03", title: "Systeem-inventarisatie", goal: "Welke systemen en hoe koppelbaar (API/MCP/Dataverse/export).",
+    fields: [
+      { id: "systemen", label: "Systemen", type: "textarea", mono: true, hint: "Eén per regel: systeem | functie | integratievorm | rechten | beheerder" },
+      { id: "koppelbaar", label: "Koppelbaar nu (quick wins)", type: "textarea" },
+      { id: "obstakels", label: "Nog niet koppelbaar / obstakels", type: "textarea" }
+    ]},
+  { id: "04", title: "Proces-mapping", goal: "Hoe loopt het werk nu; waar zit handwerk, wachttijd, fouten.",
+    fields: [
+      { id: "proces", label: "Kernproces(sen) — stappen (as-is)", type: "textarea", hint: "Beschrijf het proces stap voor stap" },
+      { id: "knelpunten", label: "Knelpunten + agent-kans", type: "textarea", hint: "Per knelpunt: type (handwerk/wachttijd/fout) en augment of automate" }
+    ]},
+  { id: "05", title: "Use-case prioritering", goal: "Kies waar je begint: waarde × haalbaarheid.",
+    fields: [
+      { id: "kandidaten", label: "Kandidaat-use-cases", type: "textarea", mono: true, hint: "Eén per regel: use-case | waarde (1-5) | haalbaarheid (1-5) | type (augment/automate)" },
+      { id: "startkeuze", label: "Startkeuze (1-3) + onderbouwing", type: "textarea" },
+      { id: "klaar", label: "Definitie van 'klaar' voor de eerste use-case", type: "textarea" }
+    ]},
+  { id: "06", title: "Agent-ontwerp", goal: "Ontwerp instructies, kennis, tools, triggers en autonomie.",
+    fields: [
+      { id: "doelscope", label: "Doel & scope", type: "textarea", hint: "Wat doet de agent wél en niet?" },
+      { id: "instructies", label: "Instructies", type: "textarea", mono: true, hint: "Taal, toon, bron verplicht, geen aannames, wat NOOIT te doen" },
+      { id: "kennisbr", label: "Kennis (knowledge sources)", type: "textarea" },
+      { id: "tools", label: "Tools / acties", type: "textarea", hint: "Alleen wat de use-case nodig heeft; mens-akkoord?" },
+      { id: "triggers", label: "Triggers", type: "textarea", hint: "Hoe wordt de agent aangeroepen?" },
+      { id: "autonomie", label: "Autonomie & mens-in-de-loop", type: "text", hint: "augment / automate-met-controle / automate" },
+      { id: "spoor", label: "Gekozen spoor", type: "text", hint: "Copilot Studio / Foundry / beide" }
+    ]},
+  { id: "07", title: "Architectuur & integratie", goal: "Platform, kennisbronnen, koppelingen en security.",
+    fields: [
+      { id: "platform", label: "Platformkeuze + onderbouwing", type: "textarea" },
+      { id: "kennisidx", label: "Kennisbronnen + revisie-/opschoonborging", type: "textarea", hint: "Alleen actuele, geaccordeerde revisies indexeren" },
+      { id: "koppelingen", label: "Koppelingen (least privilege)", type: "textarea" },
+      { id: "security", label: "Security & compliance (identiteit, DLP, gevoelige data)", type: "textarea" },
+      { id: "logging", label: "Logging & traceerbaarheid", type: "textarea" }
+    ]},
+  { id: "08", title: "Bouwen & testen", goal: "Bouw een MVP en meet de kwaliteit met een testset.",
+    fields: [
+      { id: "mvp", label: "MVP-scope", type: "textarea", hint: "Kleinste waardevolle versie; wat bewust NIET in de MVP" },
+      { id: "testset", label: "Testset", type: "textarea", mono: true, hint: "Eén per regel: vraag | verwacht antwoord/gedrag | grader. Neem negatieve tests op!" },
+      { id: "drempel", label: "Kwaliteitsdrempel", type: "textarea", hint: "Bv. >90% correct, 100% bronvermelding, 0 hallucinaties op negatieve tests" }
+    ]},
+  { id: "09", title: "Governance & adoptie", goal: "Verantwoord uitrollen, compliant houden en meten.",
+    fields: [
+      { id: "verantwoord", label: "Verantwoorde AI", type: "textarea", hint: "Bronvermelding, mens-in-de-loop, geen hallucinatie, logging" },
+      { id: "compliance", label: "Compliance (bouw)", type: "textarea", hint: "Regelgeving actueel, revisiebeheer, aansprakelijkheid, AVG, EU AI Act" },
+      { id: "adoptie", label: "Adoptie", type: "textarea", hint: "Pilot, training, feedbacklus, eigenaar/onderhoud" },
+      { id: "kpis", label: "KPI's (koppel aan succesmaat stap 00)", type: "textarea" }
+    ]}
+];
+
+const STORAGE_KEY = "wvb-blueprint-canvas-v1";
+let data = {};
+let current = 0;
+
+function load() {
+  try { data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+  catch { data = {}; }
+}
+function save() { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); updateProgress(); }
+
+function key(step, field) { return step.id + "." + field.id; }
+
+function stepFilled(step) { return step.fields.some(f => (data[key(step, f)] || "").trim().length > 0); }
+
+function updateProgress() {
+  const total = STEPS.reduce((n, s) => n + s.fields.length, 0);
+  const filled = STEPS.reduce((n, s) => n + s.fields.filter(f => (data[key(s, f)] || "").trim().length > 0).length, 0);
+  const pct = total ? Math.round((filled / total) * 100) : 0;
+  document.getElementById("progressFill").style.width = pct + "%";
+  document.getElementById("progressLabel").textContent = pct + "% ingevuld (" + filled + "/" + total + " velden)";
+  document.querySelectorAll("nav.steps button[data-step]").forEach(btn => {
+    const s = STEPS[+btn.dataset.step];
+    const dot = btn.querySelector(".dot");
+    dot.classList.toggle("filled", stepFilled(s));
+  });
+}
+
+function renderNav() {
+  const nav = document.getElementById("nav");
+  const progress = nav.querySelector(".progress-wrap");
+  nav.innerHTML = "";
+  STEPS.forEach((s, i) => {
+    const b = document.createElement("button");
+    b.dataset.step = i;
+    b.className = i === current ? "active" : "";
+    b.innerHTML = '<span class="num">' + s.id + '</span><span>' + s.title + '</span><span class="dot"></span>';
+    b.onclick = () => { current = i; renderNav(); renderMain(); window.scrollTo({ top: 0, behavior: "smooth" }); };
+    nav.appendChild(b);
+  });
+  nav.appendChild(progress);
+  updateProgress();
+}
+
+function renderMain() {
+  const s = STEPS[current];
+  const main = document.getElementById("main");
+  const card = document.createElement("div");
+  card.className = "card";
+  card.innerHTML = '<h2>' + s.id + ' — ' + s.title + '</h2><p class="goal">' + s.goal + '</p>';
+  s.fields.forEach(f => {
+    const wrap = document.createElement("div");
+    wrap.className = "field" + (f.mono ? " mono" : "");
+    const val = data[key(s, f)] || "";
+    const hint = f.hint ? '<span class="hint">' + f.hint + '</span>' : "";
+    if (f.type === "text") {
+      wrap.innerHTML = '<label>' + f.label + '</label>' + hint;
+      const inp = document.createElement("input");
+      inp.type = "text"; inp.value = val;
+      inp.oninput = () => { data[key(s, f)] = inp.value; save(); };
+      wrap.appendChild(inp);
+    } else {
+      wrap.innerHTML = '<label>' + f.label + '</label>' + hint;
+      const ta = document.createElement("textarea");
+      ta.value = val;
+      ta.oninput = () => { data[key(s, f)] = ta.value; save(); };
+      wrap.appendChild(ta);
+    }
+    card.appendChild(wrap);
+  });
+  const nb = document.createElement("div");
+  nb.className = "nav-buttons";
+  const prev = document.createElement("button");
+  prev.textContent = "‹ Vorige";
+  prev.disabled = current === 0;
+  prev.onclick = () => { if (current > 0) { current--; renderNav(); renderMain(); window.scrollTo({top:0,behavior:"smooth"}); } };
+  const next = document.createElement("button");
+  next.textContent = current === STEPS.length - 1 ? "Klaar" : "Volgende ›";
+  next.className = "primary";
+  next.onclick = () => { if (current < STEPS.length - 1) { current++; renderNav(); renderMain(); window.scrollTo({top:0,behavior:"smooth"}); } };
+  nb.appendChild(prev); nb.appendChild(next);
+  card.appendChild(nb);
+  main.innerHTML = "";
+  main.appendChild(card);
+}
+
+function toast(msg) {
+  const t = document.getElementById("toast");
+  t.textContent = msg; t.classList.add("show");
+  setTimeout(() => t.classList.remove("show"), 1800);
+}
+
+function download(filename, text, type) {
+  const blob = new Blob([text], { type: type });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = filename; a.click();
+  URL.revokeObjectURL(url);
+}
+
+function exportMarkdown() {
+  let md = "# Werkvoorbereider Agent Blueprint — ingevulde canvas\n\n";
+  md += "_Gegenereerd: " + new Date().toLocaleString("nl-NL") + "_\n\n";
+  STEPS.forEach(s => {
+    md += "## Stap " + s.id + " — " + s.title + "\n\n";
+    s.fields.forEach(f => {
+      const val = (data[key(s, f)] || "").trim();
+      md += "### " + f.label + "\n\n" + (val ? val : "_(niet ingevuld)_") + "\n\n";
+    });
+  });
+  md += "---\n\n> Voorbeelden rond regelgeving zijn illustratief; laat regelgeving door een bevoegd persoon toetsen.\n";
+  download("blueprint-canvas.md", md, "text/markdown");
+  toast("Markdown geëxporteerd");
+}
+
+function exportJson() {
+  download("blueprint-canvas.canvas.json", JSON.stringify(data, null, 2), "application/json");
+  toast("JSON geëxporteerd");
+}
+
+document.getElementById("btnMd").onclick = exportMarkdown;
+document.getElementById("btnJson").onclick = exportJson;
+document.getElementById("btnImport").onclick = () => document.getElementById("fileInput").click();
+document.getElementById("fileInput").onchange = (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    try { data = JSON.parse(reader.result); save(); renderNav(); renderMain(); toast("Canvas geïmporteerd"); }
+    catch { toast("Ongeldig JSON-bestand"); }
+  };
+  reader.readAsText(file);
+  e.target.value = "";
+};
+document.getElementById("btnReset").onclick = () => {
+  if (confirm("Alle ingevulde velden wissen?")) { data = {}; save(); renderNav(); renderMain(); toast("Canvas gewist"); }
+};
+document.getElementById("btnTheme").onclick = () => {
+  const cur = document.documentElement.getAttribute("data-theme");
+  document.documentElement.setAttribute("data-theme", cur === "dark" ? "light" : "dark");
+};
+
+load();
+renderNav();
+renderMain();
+</script>
+</body>
+</html>
