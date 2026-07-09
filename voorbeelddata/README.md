@@ -22,6 +22,7 @@ oefenen. Alle gegevens zijn verzonnen.
 | [tekeninglijst.md](tekeninglijst.md) | Tekeningregister met revisies (let op revisiebeheer!) |
 | [bbl-fictief.md](bbl-fictief.md) | **Fictieve** Bbl-stijl bouwtechnische eisen (voor de compliance-use-case) |
 | [normenregister.md](normenregister.md) | Illustratief NEN-normenregister (alleen verwijzingen; **auteursrecht-notitie**) |
+| [wijzigingsverzoek-fictief.md](wijzigingsverzoek-fictief.md) | **Fictieve** wijzigingsverzoeken (voor de meer-/minderwerk-use-case) |
 
 ## Hoe gebruik je dit?
 
@@ -47,3 +48,14 @@ oefenen. Alle gegevens zijn verzonnen.
 
 > ⚠️ **Auteursrecht & fictie.** `bbl-fictief.md` is verzonnen en niet getoetst;
 > het normenregister bevat **geen** normtekst. Gebruik dit uitsluitend als oefening.
+
+## Voor de meer-/minderwerk-use-case
+
+1. Neem [wijzigingsverzoek-fictief.md](wijzigingsverzoek-fictief.md) samen met het
+   [bestek](bestek-fictief-project.md) als **kennisbron** voor een test-agent.
+2. Gebruik de testset uit
+   [usecase-meerminderwerk](../referentie/usecase-meerminderwerk/README.md#stap-08--testen).
+3. Let op de **negatieve tests**: de agent moet (a) WV-2026-003 **niet** als meerwerk
+   bestempelen (valt binnen stelpost), (b) bij een vraag om een **bedrag** niets
+   verzinnen en naar de calculator verwijzen, en (c) meer-/minderwerk **signaleren**
+   maar niet **vaststellen**.

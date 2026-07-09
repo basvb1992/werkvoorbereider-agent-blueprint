@@ -211,6 +211,6 @@ Zie ook de gedeelde governance-stap:
 Deze use-case laat zien hoe de **Project Coach** twee sub-agents combineert: de
 [Bestek-agent](../usecase-bestek/README.md) levert de projecteis, de
 Compliance-agent levert de (fictieve) Bbl-eis + versie, en samen vormen ze een
-onderbouwde toets die de WVB/expert accordeert. Volgende kandidaat om uit te
-werken: **Meer-/minderwerk** (detecteren van afwijkingen t.o.v. contract/bestek).
-Zie [sub-agents.md](../project-coach/sub-agents.md).
+onderbouwde toets die de WVB/expert accordeert. **Meer-/minderwerk** is inmiddels
+óók volledig uitgewerkt — zie [usecase-meerminderwerk »](../usecase-meerminderwerk/README.md).
+Zie ook [sub-agents.md](../project-coach/sub-agents.md).

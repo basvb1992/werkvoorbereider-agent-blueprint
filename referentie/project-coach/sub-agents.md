@@ -13,7 +13,7 @@ agents zijn hier **globaal opgezet** (doel, scope, kennis, tools, autonomie); de
 | Planning | ⚪ stub | Uitvoeringsplanning, mijlpalen, voortgang |
 | Inkoop / Leveranciers | ⚪ stub | Offertes aanvragen/vergelijken, onderaannemers |
 | Compliance / Regelgeving | ✅ uitgewerkt | Bbl/Bouwbesluit, NEN, vergunningen, V&G |
-| Meer-/minderwerk | ⚪ stub | Wijzigingen detecteren en onderbouwen |
+| Meer-/minderwerk | ✅ uitgewerkt | Wijzigingen detecteren en onderbouwen |
 | Oplever & Kwaliteit | ⚪ stub | Restpunten, opleverdossier |
 
 ---
@@ -77,13 +77,15 @@ agents zijn hier **globaal opgezet** (doel, scope, kennis, tools, autonomie); de
   versie/ingangsdatum verplicht.
 - **Volledig uitgewerkt:** zie [usecase-compliance »](../usecase-compliance/README.md).
 
-## ⚪ Meer-/minderwerk (stub)
+## ✅ Meer-/minderwerk (uitgewerkt)
 
-- **Doel:** detecteert afwijkingen t.o.v. contract/bestek en helpt meer-/minderwerk
-  te onderbouwen.
-- **Kennis/data:** contract, bestek, wijzigingsverzoeken, calculatie.
-- **Tools (later):** wijziging registreren, onderbouwing/brief opstellen.
-- **Autonomie:** augment (concept), mens accordeert.
+- **Doel:** signaleert afwijkingen t.o.v. contract/bestek en stelt een
+  concept-onderbouwing (meer- of minderwerk) op met bronnen.
+- **Kennis/data:** contract, bestek, wijzigingsverzoeken, actuele tekeningrevisies.
+- **Tools:** geen (kennis / RAG). *(Registreren/beprijzen = latere automate-stap.)*
+- **Autonomie:** augment, **mens beslist en beprijst**. **Let op:** signaleren ≠
+  vaststellen; agent noemt **geen bedragen**.
+- **Volledig uitgewerkt:** zie [usecase-meerminderwerk »](../usecase-meerminderwerk/README.md).
 
 ## ⚪ Oplever & Kwaliteit (stub)
 
