@@ -12,7 +12,7 @@ agents zijn hier **globaal opgezet** (doel, scope, kennis, tools, autonomie); de
 | Materialen | 🔵 bestaand | Materialen, hoeveelheden, bestellingen |
 | Planning | ⚪ stub | Uitvoeringsplanning, mijlpalen, voortgang |
 | Inkoop / Leveranciers | ⚪ stub | Offertes aanvragen/vergelijken, onderaannemers |
-| Compliance / Regelgeving | ⚪ stub | Bbl/Bouwbesluit, NEN, vergunningen, V&G |
+| Compliance / Regelgeving | ✅ uitgewerkt | Bbl/Bouwbesluit, NEN, vergunningen, V&G |
 | Meer-/minderwerk | ⚪ stub | Wijzigingen detecteren en onderbouwen |
 | Oplever & Kwaliteit | ⚪ stub | Restpunten, opleverdossier |
 
@@ -65,14 +65,17 @@ agents zijn hier **globaal opgezet** (doel, scope, kennis, tools, autonomie); de
 - **Tools (later):** offerte-aanvraag opstellen, offertes normaliseren/vergelijken.
 - **Autonomie:** augment (concept-mails), mens gunt.
 
-## ⚪ Compliance / Regelgeving (stub)
+## ✅ Compliance / Regelgeving (uitgewerkt)
 
 - **Doel:** beantwoordt vragen over Bbl/Bouwbesluit, NEN-normen, vergunningen en
-  V&G — altijd met bron.
-- **Kennis/data:** regelgeving en interne richtlijnen (kennisbron).
+  V&G — altijd met bron + artikel + versie.
+- **Kennis/data:** regelgeving en interne richtlijnen (kennisbron); normenregister
+  (alleen verwijzingen).
 - **Tools:** geen (kennis / RAG).
-- **Autonomie:** augment. **Let op:** illustratief, geen juridisch advies —
-  menselijke toetsing verplicht.
+- **Autonomie:** augment, **expert-in-de-loop**. **Let op:** indicatief, geen
+  juridisch eindoordeel; NEN-normtekst niet reproduceren (auteursrecht);
+  versie/ingangsdatum verplicht.
+- **Volledig uitgewerkt:** zie [usecase-compliance »](../usecase-compliance/README.md).
 
 ## ⚪ Meer-/minderwerk (stub)
 

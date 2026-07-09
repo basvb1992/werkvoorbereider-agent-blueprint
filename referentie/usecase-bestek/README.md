@@ -155,8 +155,7 @@ Dev-spoor: batch-evaluatie met **groundedness**-grader in Foundry.
 
 ## Volgende use-cases
 
-Werk vanuit hier de volgende sub-agents uit met dezelfde 9 stappen:
-**Compliance/Regelgeving** (Bouwbesluit-Q&A) ligt het dichtst bij deze
-kennis-use-case; **Inkoopschema** en **Meer-/minderwerk** volgen zodra de
-ERP/Dataverse-schrijfkoppeling klaar is. Zie
+**Compliance/Regelgeving** (Bouwbesluit-Q&A) is inmiddels óók volledig uitgewerkt —
+zie [usecase-compliance »](../usecase-compliance/README.md). **Inkoopschema** en
+**Meer-/minderwerk** volgen zodra de ERP/Dataverse-schrijfkoppeling klaar is. Zie
 [sub-agents.md](../project-coach/sub-agents.md).

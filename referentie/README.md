@@ -10,6 +10,7 @@ loopt: een werkvoorbereidingsagent voor een (fictieve) middelgrote B&U-aannemer.
 | [project-coach/architectuur.md](project-coach/architectuur.md) | De multi-agent architectuur: **Project Coach** (orchestrator) + sub-agents, met ingevuld contextprofiel, taken-canvas en integratiematrix |
 | [project-coach/sub-agents.md](project-coach/sub-agents.md) | Catalogus van alle sub-agents (Mensen, Materialen, Bestek & Tekeningen, Planning, Inkoop, Compliance, Meer-/minderwerk, Oplever) |
 | [usecase-bestek/README.md](usecase-bestek/README.md) | Eén use-case volledig door alle 9 blueprint-stappen: **"Bestek & tekeningen doorzoeken en eisen samenvatten"** |
+| [usecase-compliance/README.md](usecase-compliance/README.md) | Tweede use-case door alle 9 stappen: **"Compliance / Bouwbesluit-(Bbl-)Q&A met bronnen"** |
 
 ## De rode draad in het kort
 
@@ -18,7 +19,8 @@ loopt: een werkvoorbereidingsagent voor een (fictieve) middelgrote B&U-aannemer.
 > vragen doorzet naar gespecialiseerde sub-agents. Er bestaan al een **Mensen
 > agent** (bemensing) en een **Materialen agent** (materialen/inkoop). Deze
 > blueprint breidt dat uit naar een compleet, samenwerkend team van sub-agents,
-> en werkt de eerste nieuwe sub-agent — **Bestek & Tekeningen** — volledig uit.
+> en werkt twee nieuwe sub-agents — **Bestek & Tekeningen** en
+> **Compliance / Regelgeving** — volledig uit.
 
 ```mermaid
 flowchart TD
@@ -28,7 +30,7 @@ flowchart TD
   PC --> MA[Materialen - bestaand]
   PC --> PL[Planning - stub]
   PC --> IN[Inkoop/Leveranciers - stub]
-  PC --> CO[Compliance/Regelgeving - stub]
+  PC --> CO[Compliance/Regelgeving - NIEUW, uitgewerkt]
   PC --> MM[Meer-/minderwerk - stub]
   PC --> OP[Oplever & Kwaliteit - stub]
 ```
