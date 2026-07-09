@@ -25,5 +25,4 @@
    | Kozijnfabriek Noord | Kozijnen | Ja |
    | Metselbedrijf Zuid | Metselwerk | Nee |
    | GlasCentrale BV | Beglazing | Ja |
-9. **Status** — 🟡 skelet (nog geen diepe use-case). Uit te werken via
-   [blueprint 06–08](../../blueprint/06-agent-ontwerp/).
+9. **Status** — ✅ volledig uitgewerkt → [usecase-inkoop](../usecase-inkoop/README.md).

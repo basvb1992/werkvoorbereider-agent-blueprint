@@ -4,8 +4,8 @@ Elke sub-agent van de **Project Coach** heeft hier een **consistent skelet**: ee
 lichtgewicht spec die precies genoeg vastlegt om (a) het team compleet te maken en
 (b) de **gemockte demo** (Fase B) te kunnen bouwen met M365 + Power Apps.
 
-De drie kern-agents (Bestek, Compliance, Meer-/minderwerk) zijn al **diep**
-uitgewerkt in [../usecase-*](../); hun skelet-item hieronder verwijst daarnaar.
+Alle agents zijn inmiddels **diep** uitgewerkt in de `usecase-*`-mappen; dit blijft
+het beknopte skelet-overzicht (doel, systemen, mock-plan) van het hele team.
 
 ---
 
@@ -34,11 +34,11 @@ uitgewerkt in [../usecase-*](../); hun skelet-item hieronder verwijst daarnaar.
 | Bestek & Tekeningen | augment | SharePoint — bestek/tekeningen | ✅ diep → [usecase](../usecase-bestek/README.md) |
 | Compliance / Regelgeving | augment | SharePoint — Bbl/normen | ✅ diep → [usecase](../usecase-compliance/README.md) |
 | Meer-/minderwerk | augment→automate | SharePoint — wijzigingen (+ PO change orders) | ✅ diep → [usecase](../usecase-meerminderwerk/README.md) |
-| Planning | automate | **Project Operations** — WBS/taken | 🟡 [skelet](planning.md) |
-| Mensen | automate | **Field Service** — bookable resources | 🟡 [skelet](mensen.md) |
-| Materialen | automate | **Field Service** — voorraad/producten | 🟡 [skelet](materialen.md) |
-| Inkoop / Leveranciers | augment→automate | **Project Operations** — inkoop/estimates | 🟡 [skelet](inkoop-leveranciers.md) |
-| Oplever & Kwaliteit | automate | **Field Service** — werkorders/inspecties | 🟡 [skelet](oplever-kwaliteit.md) |
+| Planning | automate | **Project Operations** — WBS/taken | ✅ [usecase](../usecase-planning/README.md) · [skelet](planning.md) |
+| Mensen | automate | **Field Service** — bookable resources | ✅ [usecase](../usecase-mensen/README.md) · [skelet](mensen.md) |
+| Materialen | automate | **Field Service** — voorraad/producten | ✅ [usecase](../usecase-materialen/README.md) · [skelet](materialen.md) |
+| Inkoop / Leveranciers | augment→automate | **Project Operations** — inkoop/estimates | ✅ [usecase](../usecase-inkoop/README.md) · [skelet](inkoop-leveranciers.md) |
+| Oplever & Kwaliteit | automate | **Field Service** — werkorders/inspecties | ✅ [usecase](../usecase-oplever/README.md) · [skelet](oplever-kwaliteit.md) |
 
 ---
 

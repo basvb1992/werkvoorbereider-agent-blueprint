@@ -26,5 +26,4 @@
    | Gevel + kozijnen | Gevel | 07-01 | 07-18 | 0% | Gepland |
    | Afbouw | Afbouw | 07-21 | 08-15 | 0% | Gepland |
    | Oplevering | Oplevering | 08-18 | 08-22 | 0% | Gepland |
-9. **Status** — 🟡 skelet (nog geen diepe use-case). Uit te werken via
-   [blueprint 06–08](../../blueprint/06-agent-ontwerp/).
+9. **Status** — ✅ volledig uitgewerkt → [usecase-planning](../usecase-planning/README.md).

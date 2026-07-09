@@ -13,6 +13,8 @@ loopt: een werkvoorbereidingsagent voor een (fictieve) middelgrote B&U-aannemer.
 | [usecase-bestek/README.md](usecase-bestek/README.md) | Eén use-case volledig door alle 9 blueprint-stappen: **"Bestek & tekeningen doorzoeken en eisen samenvatten"** |
 | [usecase-compliance/README.md](usecase-compliance/README.md) | Tweede use-case door alle 9 stappen: **"Compliance / Bouwbesluit-(Bbl-)Q&A met bronnen"** |
 | [usecase-meerminderwerk/README.md](usecase-meerminderwerk/README.md) | Derde use-case door alle 9 stappen: **"Meer-/minderwerk signaleren en onderbouwen"** |
+| [usecase-planning](usecase-planning/README.md) · [mensen](usecase-mensen/README.md) · [materialen](usecase-materialen/README.md) · [inkoop](usecase-inkoop/README.md) · [oplever](usecase-oplever/README.md) | Use-cases 4–8: de **actie-agents** (Project Operations / Field Service), elk volledig door de 9 stappen |
+| [rocket-principe.md](rocket-principe.md) | Het **ROCKET**-stramien voor agent-instructies (Role · Objective · Context · Key results · Examples · Tone) |
 
 ## De rode draad in het kort
 

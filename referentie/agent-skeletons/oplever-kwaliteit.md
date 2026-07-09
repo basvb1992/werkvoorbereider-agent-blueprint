@@ -24,5 +24,4 @@
    | App. 1.2 woonkamer | Kras op kozijn | Open | Timmerman |
    | Fundering | Keuring wapening | Akkoord | Constructeur |
    | Trappenhuis | Schilderwerk onvolledig | Open | Schilder |
-9. **Status** — 🟡 skelet (nog geen diepe use-case). Uit te werken via
-   [blueprint 06–08](../../blueprint/06-agent-ontwerp/).
+9. **Status** — ✅ volledig uitgewerkt → [usecase-oplever](../usecase-oplever/README.md).

@@ -68,10 +68,12 @@ flowchart TD
    - een invulbare **template** (`template.md`) die je kopieert en invult.
 3. **Volg de rode draad.** In [referentie/](referentie/) vind je een volledig
    uitgewerkt voorbeeld: een **werkvoorbereidingsagent** (Project Coach met
-   sub-agents) en drie diep uitgewerkte use-cases
-   ([Bestek & tekeningen doorzoeken](referentie/usecase-bestek/),
-   [Compliance / Bbl-Q&A](referentie/usecase-compliance/) en
-   [Meer-/minderwerk](referentie/usecase-meerminderwerk/)).
+   sub-agents) en **acht** diep uitgewerkte use-cases — de kennis-agents
+   ([Bestek](referentie/usecase-bestek/), [Compliance](referentie/usecase-compliance/),
+   [Meer-/minderwerk](referentie/usecase-meerminderwerk/)) en de actie-agents
+   ([Planning](referentie/usecase-planning/), [Mensen](referentie/usecase-mensen/),
+   [Materialen](referentie/usecase-materialen/), [Inkoop](referentie/usecase-inkoop/),
+   [Oplever](referentie/usecase-oplever/)).
 4. **Gebruik de interactieve tool.** Open [tool/index.html](tool/index.html) in
    je browser om de 9 stappen als canvas in te vullen en te exporteren.
 

@@ -24,5 +24,5 @@
    | Baksteen roodbruin genuanceerd | 1000 st | 24.000 | Centraal | 2 wkn |
    | HR++ beglazing | m² | 0 | — | 4 wkn |
    | Beton C30/37 | m³ | op bestelling | — | 1 dag |
-9. **Status** — 🟡 skelet. Sluit aan op de bestaande **Materialen agent** in de
-   demo-omgeving.
+9. **Status** — ✅ volledig uitgewerkt → [usecase-materialen](../usecase-materialen/README.md). Sluit aan
+   op de bestaande **Materialen agent** in de demo-omgeving.

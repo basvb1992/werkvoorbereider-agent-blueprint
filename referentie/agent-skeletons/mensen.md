@@ -24,5 +24,5 @@
    | Jan de Vries | Timmerman | VCA (geldig) | wk 24–30 |
    | Piet Bakker | Metselaar | VCA (verloopt wk 27) | wk 25–34 |
    | Sanne Willems | Uitvoerder | VCA-VOL | wk 24–40 |
-9. **Status** — 🟡 skelet. Sluit aan op de bestaande **Mensen agent 2.0** in de
-   demo-omgeving.
+9. **Status** — ✅ volledig uitgewerkt → [usecase-mensen](../usecase-mensen/README.md). Sluit aan
+   op de bestaande **Mensen agent 2.0** in de demo-omgeving.

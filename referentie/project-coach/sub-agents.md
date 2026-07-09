@@ -9,13 +9,13 @@ per agent (met mock-plan voor de demo) staan in [../agent-skeletons/](../agent-s
 | Sub-agent | Status | Kern |
 |---|---|---|
 | Bestek & Tekeningen | ✅ uitgewerkt | Eisen uit bestek/tekeningen zoeken en samenvatten |
-| Mensen | 🔵 bestaand | Bemensing, certificaten, beschikbaarheid, vervanging |
-| Materialen | 🔵 bestaand | Materialen, hoeveelheden, bestellingen |
-| Planning | 🟡 skelet | Uitvoeringsplanning, mijlpalen, voortgang |
-| Inkoop / Leveranciers | 🟡 skelet | Offertes aanvragen/vergelijken, onderaannemers |
+| Mensen | ✅ uitgewerkt | Bemensing, certificaten, beschikbaarheid, vervanging |
+| Materialen | ✅ uitgewerkt | Materialen, hoeveelheden, bestellingen |
+| Planning | ✅ uitgewerkt | Uitvoeringsplanning, mijlpalen, voortgang |
+| Inkoop / Leveranciers | ✅ uitgewerkt | Offertes aanvragen/vergelijken, onderaannemers |
 | Compliance / Regelgeving | ✅ uitgewerkt | Bbl/Bouwbesluit, NEN, vergunningen, V&G |
 | Meer-/minderwerk | ✅ uitgewerkt | Wijzigingen detecteren en onderbouwen |
-| Oplever & Kwaliteit | 🟡 skelet | Restpunten, opleverdossier |
+| Oplever & Kwaliteit | ✅ uitgewerkt | Restpunten, opleverdossier |
 
 ---
 
@@ -29,9 +29,9 @@ per agent (met mock-plan voor de demo) staan in [../agent-skeletons/](../agent-s
 - **Autonomie:** *augment* — stelt concept voor, WVB controleert.
 - **Volledig uitgewerkt:** zie [usecase-bestek »](../usecase-bestek/README.md).
 
-## 🔵 Mensen (bestaand)
+## ✅ Mensen (uitgewerkt)
 
-> **Skelet:** [agent-skeletons/mensen.md](../agent-skeletons/mensen.md)
+> **Skelet:** [agent-skeletons/mensen.md](../agent-skeletons/mensen.md) · **Volledig uitgewerkt:** [usecase-mensen »](../usecase-mensen/README.md)
 
 - **Doel:** ondersteunt bemensing van projecten — beschikbaarheid,
   certificaten/diploma's, planningsconflicten, vervangingsverzoeken.
@@ -42,9 +42,9 @@ per agent (met mock-plan voor de demo) staan in [../agent-skeletons/](../agent-s
   concept).
 - **Integratie:** ERP/HR via Dataverse/connector.
 
-## 🔵 Materialen (bestaand)
+## ✅ Materialen (uitgewerkt)
 
-> **Skelet:** [agent-skeletons/materialen.md](../agent-skeletons/materialen.md)
+> **Skelet:** [agent-skeletons/materialen.md](../agent-skeletons/materialen.md) · **Volledig uitgewerkt:** [usecase-materialen »](../usecase-materialen/README.md)
 
 - **Doel:** ondersteunt materiaal- en inkoopvragen — hoeveelheden, bestellijsten,
   voorraad, levertijden.
@@ -53,9 +53,9 @@ per agent (met mock-plan voor de demo) staan in [../agent-skeletons/](../agent-s
 - **Autonomie:** augment → automate-met-controle.
 - **Integratie:** 4PS/Dataverse.
 
-## 🟡 Planning (skelet)
+## ✅ Planning (uitgewerkt)
 
-> **Skelet:** [agent-skeletons/planning.md](../agent-skeletons/planning.md)
+> **Skelet:** [agent-skeletons/planning.md](../agent-skeletons/planning.md) · **Volledig uitgewerkt:** [usecase-planning »](../usecase-planning/README.md)
 
 - **Doel:** helpt de uitvoeringsplanning op te stellen en te bewaken; signaleert
   mijlpalen en afwijkingen.
@@ -64,9 +64,9 @@ per agent (met mock-plan voor de demo) staan in [../agent-skeletons/](../agent-s
 - **Autonomie:** augment.
 - **Uit te werken via:** [blueprint stappen 06-08](../../blueprint/06-agent-ontwerp/).
 
-## 🟡 Inkoop / Leveranciers (skelet)
+## ✅ Inkoop / Leveranciers (uitgewerkt)
 
-> **Skelet:** [agent-skeletons/inkoop-leveranciers.md](../agent-skeletons/inkoop-leveranciers.md)
+> **Skelet:** [agent-skeletons/inkoop-leveranciers.md](../agent-skeletons/inkoop-leveranciers.md) · **Volledig uitgewerkt:** [usecase-inkoop »](../usecase-inkoop/README.md)
 
 - **Doel:** ondersteunt het inkoopproces — offertes aanvragen, vergelijken,
   onderaannemers selecteren.
@@ -96,9 +96,9 @@ per agent (met mock-plan voor de demo) staan in [../agent-skeletons/](../agent-s
   vaststellen; agent noemt **geen bedragen**.
 - **Volledig uitgewerkt:** zie [usecase-meerminderwerk »](../usecase-meerminderwerk/README.md).
 
-## 🟡 Oplever & Kwaliteit (skelet)
+## ✅ Oplever & Kwaliteit (uitgewerkt)
 
-> **Skelet:** [agent-skeletons/oplever-kwaliteit.md](../agent-skeletons/oplever-kwaliteit.md)
+> **Skelet:** [agent-skeletons/oplever-kwaliteit.md](../agent-skeletons/oplever-kwaliteit.md) · **Volledig uitgewerkt:** [usecase-oplever »](../usecase-oplever/README.md)
 
 - **Doel:** helpt het oplever-/revisiedossier samen te stellen en restpunten te
   bewaken.
