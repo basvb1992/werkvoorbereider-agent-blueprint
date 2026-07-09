@@ -3,18 +3,19 @@
 De **Project Coach** coördineert onderstaande gespecialiseerde sub-agents. Alle
 agents zijn hier **globaal opgezet** (doel, scope, kennis, tools, autonomie); de
 **Bestek & Tekeningen**-agent is volledig uitgewerkt in
-[../usecase-bestek/README.md](../usecase-bestek/README.md).
+[../usecase-bestek/README.md](../usecase-bestek/README.md). Consistente **skeletons**
+per agent (met mock-plan voor de demo) staan in [../agent-skeletons/](../agent-skeletons/).
 
 | Sub-agent | Status | Kern |
 |---|---|---|
 | Bestek & Tekeningen | ✅ uitgewerkt | Eisen uit bestek/tekeningen zoeken en samenvatten |
 | Mensen | 🔵 bestaand | Bemensing, certificaten, beschikbaarheid, vervanging |
 | Materialen | 🔵 bestaand | Materialen, hoeveelheden, bestellingen |
-| Planning | ⚪ stub | Uitvoeringsplanning, mijlpalen, voortgang |
-| Inkoop / Leveranciers | ⚪ stub | Offertes aanvragen/vergelijken, onderaannemers |
+| Planning | 🟡 skelet | Uitvoeringsplanning, mijlpalen, voortgang |
+| Inkoop / Leveranciers | 🟡 skelet | Offertes aanvragen/vergelijken, onderaannemers |
 | Compliance / Regelgeving | ✅ uitgewerkt | Bbl/Bouwbesluit, NEN, vergunningen, V&G |
 | Meer-/minderwerk | ✅ uitgewerkt | Wijzigingen detecteren en onderbouwen |
-| Oplever & Kwaliteit | ⚪ stub | Restpunten, opleverdossier |
+| Oplever & Kwaliteit | 🟡 skelet | Restpunten, opleverdossier |
 
 ---
 
@@ -30,6 +31,8 @@ agents zijn hier **globaal opgezet** (doel, scope, kennis, tools, autonomie); de
 
 ## 🔵 Mensen (bestaand)
 
+> **Skelet:** [agent-skeletons/mensen.md](../agent-skeletons/mensen.md)
+
 - **Doel:** ondersteunt bemensing van projecten — beschikbaarheid,
   certificaten/diploma's, planningsconflicten, vervangingsverzoeken.
 - **Kennis/data:** rooster/HR, certificatenregister.
@@ -41,6 +44,8 @@ agents zijn hier **globaal opgezet** (doel, scope, kennis, tools, autonomie); de
 
 ## 🔵 Materialen (bestaand)
 
+> **Skelet:** [agent-skeletons/materialen.md](../agent-skeletons/materialen.md)
+
 - **Doel:** ondersteunt materiaal- en inkoopvragen — hoeveelheden, bestellijsten,
   voorraad, levertijden.
 - **Kennis/data:** materiaalstaten, ERP (artikelen, orders).
@@ -48,7 +53,9 @@ agents zijn hier **globaal opgezet** (doel, scope, kennis, tools, autonomie); de
 - **Autonomie:** augment → automate-met-controle.
 - **Integratie:** 4PS/Dataverse.
 
-## ⚪ Planning (stub)
+## 🟡 Planning (skelet)
+
+> **Skelet:** [agent-skeletons/planning.md](../agent-skeletons/planning.md)
 
 - **Doel:** helpt de uitvoeringsplanning op te stellen en te bewaken; signaleert
   mijlpalen en afwijkingen.
@@ -57,7 +64,9 @@ agents zijn hier **globaal opgezet** (doel, scope, kennis, tools, autonomie); de
 - **Autonomie:** augment.
 - **Uit te werken via:** [blueprint stappen 06-08](../../blueprint/06-agent-ontwerp/).
 
-## ⚪ Inkoop / Leveranciers (stub)
+## 🟡 Inkoop / Leveranciers (skelet)
+
+> **Skelet:** [agent-skeletons/inkoop-leveranciers.md](../agent-skeletons/inkoop-leveranciers.md)
 
 - **Doel:** ondersteunt het inkoopproces — offertes aanvragen, vergelijken,
   onderaannemers selecteren.
@@ -87,7 +96,9 @@ agents zijn hier **globaal opgezet** (doel, scope, kennis, tools, autonomie); de
   vaststellen; agent noemt **geen bedragen**.
 - **Volledig uitgewerkt:** zie [usecase-meerminderwerk »](../usecase-meerminderwerk/README.md).
 
-## ⚪ Oplever & Kwaliteit (stub)
+## 🟡 Oplever & Kwaliteit (skelet)
+
+> **Skelet:** [agent-skeletons/oplever-kwaliteit.md](../agent-skeletons/oplever-kwaliteit.md)
 
 - **Doel:** helpt het oplever-/revisiedossier samen te stellen en restpunten te
   bewaken.
@@ -97,9 +108,9 @@ agents zijn hier **globaal opgezet** (doel, scope, kennis, tools, autonomie); de
 
 ---
 
-## Hoe werk je een stub verder uit?
+## Hoe werk je een skelet verder uit?
 
-Elke stub doorloopt dezelfde route als de bestek-agent:
+Elk skelet doorloopt dezelfde route als de bestek-agent:
 [stap 06 Agent-ontwerp](../../blueprint/06-agent-ontwerp/) →
 [stap 07 Architectuur](../../blueprint/07-architectuur-en-integratie/) →
 [stap 08 Bouwen & testen](../../blueprint/08-bouwen-en-testen/) →

@@ -9,6 +9,7 @@ loopt: een werkvoorbereidingsagent voor een (fictieve) middelgrote B&U-aannemer.
 |---|---|
 | [project-coach/architectuur.md](project-coach/architectuur.md) | De multi-agent architectuur: **Project Coach** (orchestrator) + sub-agents, met ingevuld contextprofiel, taken-canvas en integratiematrix |
 | [project-coach/sub-agents.md](project-coach/sub-agents.md) | Catalogus van alle sub-agents (Mensen, Materialen, Bestek & Tekeningen, Planning, Inkoop, Compliance, Meer-/minderwerk, Oplever) |
+| [agent-skeletons/README.md](agent-skeletons/README.md) | Consistente **skeletons** per agent (doel, systemen FS/PO, mock-plan) — het hele team klaar voor de demo |
 | [usecase-bestek/README.md](usecase-bestek/README.md) | Eén use-case volledig door alle 9 blueprint-stappen: **"Bestek & tekeningen doorzoeken en eisen samenvatten"** |
 | [usecase-compliance/README.md](usecase-compliance/README.md) | Tweede use-case door alle 9 stappen: **"Compliance / Bouwbesluit-(Bbl-)Q&A met bronnen"** |
 | [usecase-meerminderwerk/README.md](usecase-meerminderwerk/README.md) | Derde use-case door alle 9 stappen: **"Meer-/minderwerk signaleren en onderbouwen"** |

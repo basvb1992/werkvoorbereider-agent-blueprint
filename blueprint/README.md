@@ -89,6 +89,7 @@ De basis voor [stap 03](03-systeem-inventarisatie/).
 | Planning | MS Project, Primavera P6, Asta Powerproject, KYP Project, Tim |
 | BIM / CAD | Revit, AutoCAD, Navisworks, Solibri, Tekla, Stabicad |
 | Bouwplaats / DMS | Dalux, Ed Controls, Snagstream, Bouwapp, Relatics |
+| Field service & projecten (Dataverse) | Dynamics 365 Field Service, Dynamics 365 Project Operations |
 | Bestek-systematiek | STABU (B&U), RAW / CROW (GWW) |
 | Kantoor / communicatie | Microsoft 365 (Excel!, Outlook, SharePoint, Teams), WhatsApp |
 

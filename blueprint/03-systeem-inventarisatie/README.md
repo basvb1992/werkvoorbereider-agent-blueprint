@@ -19,7 +19,14 @@ De integratievorm bepaalt of de agent kan **lezen**, **schrijven** of alleen
 | Planning | MS Project, Primavera P6, Asta Powerproject, KYP Project |
 | BIM / CAD | Revit, Navisworks, Solibri, Tekla, Stabicad |
 | Bouwplaats / DMS | Dalux, Ed Controls, Snagstream, Bouwapp, Relatics |
+| Field service & projecten (Dataverse) | **Dynamics 365 Field Service**, **Dynamics 365 Project Operations** |
 | Kantoor | Microsoft 365 (Excel, Outlook, SharePoint, Teams) |
+
+> **Dynamics 365 op Dataverse:** Field Service (werkorders, resources, voorraad,
+> assets) en Project Operations (projecten, WBS, budget, change orders) draaien op
+> **Dataverse** en zijn daardoor sterk koppelbaar aan Copilot Studio-agents — ideaal
+> voor de *actie*-agents (Planning, Mensen, Materialen, Oplever). Zie de
+> [agent-skeletons](../../referentie/agent-skeletons/README.md).
 
 ## Integratievormen (van sterk naar zwak gekoppeld)
 
