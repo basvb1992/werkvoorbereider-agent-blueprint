@@ -17,6 +17,8 @@ alles draait lokaal in je browser.
 - **ROCKET prompt-starter** (stap 06) — genereert uit je velden een start-instructie
   die je in Copilot Studio of Foundry plakt en daar verder verfijnt.
 - **Voortgang** — één balk over velden én checklists samen.
+- **Print / PDF** — knop die de volledige ingevulde blueprint als print-/PDF-weergave
+  opent (browser "Opslaan als PDF"); geen dependencies, blijft offline.
 
 ## Gebruiken
 

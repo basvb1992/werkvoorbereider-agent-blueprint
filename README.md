@@ -78,6 +78,9 @@ flowchart TD
    je browser: een begeleide **bouwgids** met rolbadges (business ↔ IT),
    checklists, praktische tips en een ROCKET prompt-starter — vul de 9 stappen in
    en exporteer je blueprint (Markdown of JSON).
+5. **Bouw de demo.** Volg het
+   [implementatie-voorbeeld](referentie/implementatie-voorbeeld/README.md) om de
+   eerste (moderne, augment) **Bestek-agent** werkend te krijgen in Copilot Studio.
 
 ---
 

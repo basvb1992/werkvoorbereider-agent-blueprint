@@ -15,6 +15,7 @@ loopt: een werkvoorbereidingsagent voor een (fictieve) middelgrote B&U-aannemer.
 | [usecase-meerminderwerk/README.md](usecase-meerminderwerk/README.md) | Derde use-case door alle 9 stappen: **"Meer-/minderwerk signaleren en onderbouwen"** |
 | [usecase-inkoop-materialen](usecase-inkoop-materialen/README.md) · [Planning & Capaciteit](usecase-planning/README.md) · [oplever](usecase-oplever/README.md) · [Mensen-service](usecase-mensen/README.md) | De **actie-agents** (Field Service / Project Operations), elk volledig door de 9 stappen |
 | [rocket-principe.md](rocket-principe.md) | Het **ROCKET**-stramien voor agent-instructies (Role · Objective · Context · Key results · Examples · Tone) |
+| [implementatie-voorbeeld/](implementatie-voorbeeld/README.md) | **Werkende demo (Fase B):** build-runbook + instructie + testset voor de moderne Bestek-agent |
 
 ## De rode draad in het kort
 

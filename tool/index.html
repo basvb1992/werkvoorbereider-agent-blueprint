@@ -217,10 +217,17 @@ nav.steps .nav-heading { font-size: 0.72rem; text-transform: uppercase; letter-s
 .big-progress { display: flex; align-items: center; gap: 14px; margin: 6px 0 4px; }
 .big-progress .ring { font-size: 1.6rem; font-weight: 700; color: var(--cp-accent); font-variant-numeric: tabular-nums; }
 
+.print-only { display: none; }
+#printArea { padding: 8px 4px; color: #000; }
+#printArea h1 { font-size: 20px; margin: 0 0 4px; }
+#printArea h2 { font-size: 15px; margin: 18px 0 4px; border-bottom: 1px solid #999; padding-bottom: 2px; page-break-after: avoid; }
+#printArea h3 { font-size: 12px; margin: 10px 0 2px; page-break-after: avoid; }
+#printArea .pv-meta, #printArea .pv-who { font-size: 11px; color: #333; margin: 0 0 6px; }
+#printArea .pv-val { font-size: 12px; white-space: pre-wrap; margin: 0 0 4px; }
+#printArea .pv-chk { font-size: 12px; margin: 2px 0; }
 @media print {
-  header, nav.steps, .toolbar, .nav-buttons { display: none !important; }
-  .layout { display: block; max-width: none; padding: 0; }
-  .card { box-shadow: none; border: none; padding: 0; }
+  body > header, body > .layout, body > .footer-note, body > .toast { display: none !important; }
+  #printArea.print-only { display: block !important; }
 }
 </style>
 </head>
@@ -237,6 +244,7 @@ nav.steps .nav-heading { font-size: 0.72rem; text-transform: uppercase; letter-s
       <button id="btnImport">Importeren</button>
       <button id="btnJson">Export JSON</button>
       <button id="btnMd" class="primary">Export Markdown</button>
+      <button id="btnPrint">Print / PDF</button>
       <button id="btnReset">Wissen</button>
       <input type="file" id="fileInput" accept="application/json" style="display:none" />
     </div>
@@ -255,6 +263,7 @@ nav.steps .nav-heading { font-size: 0.72rem; text-transform: uppercase; letter-s
 </div>
 
 <div class="toast" id="toast"></div>
+<div id="printArea" class="print-only" aria-hidden="true"></div>
 
 <script>
 const STEPS = [
@@ -878,9 +887,33 @@ function exportJson() {
   toast("JSON geëxporteerd");
 }
 
+function esc(s) { return (s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+
+function buildPrintView() {
+  const pa = document.getElementById("printArea");
+  let h = "<h1>Werkvoorbereider Agent — blueprint</h1>";
+  const mb = WELCOME.metaFields.filter(f => (meta[f.id] || "").trim()).map(f => esc(f.label) + ": " + esc(meta[f.id]));
+  if (mb.length) h += '<div class="pv-meta">' + mb.join(" · ") + "</div>";
+  const c = counts();
+  h += '<div class="pv-meta">Voortgang: ' + c.pct + "% (" + c.filled + "/" + c.total + ") · " + new Date().toLocaleString("nl-NL") + "</div>";
+  STEPS.forEach(s => {
+    h += "<h2>" + s.id + " — " + esc(s.title) + "</h2>";
+    if (s.who) h += '<div class="pv-who">Aan tafel: ' + esc(s.who.join(", ")) + "</div>";
+    (s.checklist || []).forEach((item, i) => {
+      h += '<div class="pv-chk">[' + (checks[checkKey(s, i)] ? "x" : " ") + "] " + esc(item) + "</div>";
+    });
+    s.fields.forEach(f => {
+      const v = (data[key(s, f)] || "").trim();
+      h += "<h3>" + esc(f.label) + '</h3><div class="pv-val">' + (v ? esc(v) : "—") + "</div>";
+    });
+  });
+  pa.innerHTML = h;
+}
+
 document.getElementById("btnStart").onclick = () => go(-1);
 document.getElementById("btnMd").onclick = exportMarkdown;
 document.getElementById("btnJson").onclick = exportJson;
+document.getElementById("btnPrint").onclick = () => { buildPrintView(); window.print(); };
 document.getElementById("btnImport").onclick = () => document.getElementById("fileInput").click();
 document.getElementById("fileInput").onchange = (e) => {
   const file = e.target.files[0];
