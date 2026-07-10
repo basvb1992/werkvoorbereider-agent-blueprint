@@ -22,6 +22,7 @@ concreet ontwerp — nog platform-onafhankelijk. Een goede agent-spec beschrijft
 | **3. Kennis (knowledge)** | Welke ongestructureerde bronnen? | Bestek-PDF, tekeninglijst, contract (uit stap 02). |
 | **4. Tools / acties** | Welke gestructureerde acties? | (Bestek-agent: geen. Inkoop-agent: record aanmaken in ERP.) |
 | **5. Triggers** | Wanneer/hoe wordt de agent aangeroepen? | WVB stelt een vraag; of "vat de eisen van dit project samen". |
+| **5b. Kanalen (channels)** | Waar draait de agent; waar werkt de gebruiker? | Teams; later e-mail/webchat. |
 | **6. Autonomie & mens-in-de-loop** | Wat mag de agent zelf? Waar keurt een mens goed? | Stelt concept-eisenlijst voor; WVB controleert en accordeert. |
 
 ## Enkele agent of meerdere?
@@ -31,8 +32,9 @@ Kies bewust:
 - **Enkele agent** — één use-case, overzichtelijk. Prima om te starten.
 - **Multi-agent (orchestrator + sub-agents)** — een *coördinerende* agent
   (bv. **Project Coach**) die vragen routeert naar gespecialiseerde sub-agents
-  (Mensen, Materialen, Bestek, Planning, …). Beter als je meerdere domeinen
-  wilt afdekken en per domein wilt kunnen doorontwikkelen.
+  (Bestek, Compliance, Inkoop & Materialen, Planning & Capaciteit, …). Beter als je
+  meerdere domeinen wilt afdekken en per domein wilt kunnen doorontwikkelen. Volg de
+  [multi-agent-orchestration best practices](../../best-practices/multi-agent-orchestration.md).
 
 > Onze rode draad gebruikt het multi-agent-patroon. Zie
 > [referentie/project-coach/architectuur.md](../../referentie/project-coach/architectuur.md).

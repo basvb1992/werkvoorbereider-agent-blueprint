@@ -78,8 +78,14 @@ flowchart TD
 
 - Herkent op basis van de vraag *welk domein* het betreft.
 - Zet de vraag door naar de juiste sub-agent (connected agent / tool call).
+- **Single-response principle:** alleen de Coach antwoordt de gebruiker; sub-agents
+  geven hun bevindingen terug (*invoke → wait → combine → respond*).
 - Voegt antwoorden samen en houdt projectcontext (welk project, welke fase).
 - Vraagt om verduidelijking bij twijfel; verzint nooit een antwoord zelf.
+
+> Elke sub-agent krijgt bovenaan een **rol-declaratie** ("je bent een sub-agent,
+> antwoord niet direct"). Zie de
+> [multi-agent-orchestration best practices](../../best-practices/multi-agent-orchestration.md).
 
 De volledige sub-agent-catalogus staat in [sub-agents.md](sub-agents.md).
 

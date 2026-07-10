@@ -54,6 +54,16 @@ Verzamel realistische vragen/taken uit de praktijk van de WVB, met het
   objectief kunt meten.
 - **Groot uitrollen zonder pilot.** Start met een paar WVB's; leer; schaal daarna.
 
+## Testmethodes & metrics (Copilot Studio)
+
+Copilot Studio biedt drie **testmethodes**: **text match**, **similarity** en
+**quality/groundedness** (relevantie, groundedness, volledigheid). **Evalueer vóór
+je publiceert**, houd een **baseline** aan en detecteer **regressie**. Relevante
+**metrics**: groundedness, instruction-following, topic-match en citation-accuracy.
+Bron: [Evaluate an agent](https://learn.microsoft.com/microsoft-copilot-studio/agents-experience/analytics-agent-evaluation-intro)
+· [metrics](https://learn.microsoft.com/microsoft-copilot-studio/guidance/agent-business-value-metrics-reference).
+Zie ook [best-practices/copilot-studio.md](../../best-practices/copilot-studio.md).
+
 ## Ingevuld referentievoorbeeld
 
 Zie de volledige testset voor de bestek-agent in

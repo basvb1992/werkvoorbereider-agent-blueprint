@@ -17,6 +17,20 @@ stramien. Zo zijn de instructies compleet, consistent en toetsbaar.
 > jouw organisatie een andere betekenis van de letters? Pas hem **hier centraal**
 > aan; de use-cases verwijzen naar dit document.
 
+## Aanvullende regels (Microsoft-guidance)
+
+Naast ROCKET gelden de Copilot Studio instructie-best-practices
+([bron](https://learn.microsoft.com/microsoft-copilot-studio/guidance/generative-mode-guidance)):
+
+- Gebruik **exacte toolnamen**; beschrijf **kennisbronnen generiek** (niet hard opnoemen).
+- Definieer de **volgorde van acties** bij multistep; voeg expliciet **"must not do"** toe.
+- Gebruik **directive taal** (MUST/NEVER/ONLY); behandel instructies **als code**
+  (bouw incrementeel op, test tussendoor).
+
+**In een multi-agent-opstelling** krijgt elke sub-agent bovenaan een rol-declaratie
+(*"Je bent een sub-agent; antwoord niet direct aan de gebruiker"*). Zie
+[multi-agent-orchestration](../best-practices/multi-agent-orchestration.md).
+
 Elke uitgewerkte use-case structureert het instructie-blok in stap 06 volgens deze
 zes elementen. Zie bijvoorbeeld
 [usecase-planning](usecase-planning/README.md#stap-06--agent-ontwerp).

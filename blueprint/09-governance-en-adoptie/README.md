@@ -47,6 +47,25 @@ betrouwbaarheid, aansprakelijkheid en regelgeving. Deze stap borgt drie dingen:
 - **Impact meten** — meet tegen de succesmaat uit [stap 00](../00-context-en-ambitie/):
   bespaarde tijd, minder faalkosten, gebruikstevredenheid.
 
+## D. Governance & ALM (Microsoft-platform)
+
+Sluit aan op de Copilot Studio governance-guidance
+([zoned governance](https://learn.microsoft.com/microsoft-copilot-studio/guidance/sec-gov-phase2),
+[ALM](https://learn.microsoft.com/microsoft-copilot-studio/guidance/alm)):
+
+- **Zoned governance** — kies de zone: Zone 1 (persoonlijk/read-only), **Zone 2
+  (IT-begeleide makers — Copilot Studio, meestal hier)**, Zone 3 (pro-dev/enterprise).
+- **3-omgevingen ALM** — dev → test → prod met **managed solutions**;
+  **environment variables** + **connection references** voor omgevingsspecifieke config.
+- **DLP & Purview** — data-loss-prevention op connectors; sensitivity labels + audit logs.
+- **Toegang** — via **Entra ID-groepen** (niet individuen); **least privilege**;
+  secrets in **Key Vault**.
+- **Monitoring** — analytics + App Insights; gated approvals voor productie.
+
+> Details en de "passen we ze toe?"-check:
+> [best-practices/copilot-studio.md](../../best-practices/copilot-studio.md) en de
+> [alignment-matrix](../../best-practices/microsoft-alignment.md).
+
 ## Invulvragen
 
 1. Welke verantwoorde-AI-maatregelen zijn geborgd (bron, mens-in-de-loop, logging)?

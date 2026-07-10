@@ -97,6 +97,10 @@ flowchart TD
   is platform-onafhankelijk; de *bouwstappen* (6–8) zijn Microsoft-specifiek.
 - **Verantwoorde AI:** de blueprint stuurt op bronvermelding, menselijke controle
   en naleving van bouwregelgeving. Zie [09 Governance & adoptie](blueprint/09-governance-en-adoptie/).
+- **Actueel & toetsbaar:** de [werkwijze](WAY-OF-WORKING.md) mapt op Microsoft's
+  agent design canvas; de [best practices](best-practices/README.md) (met
+  [alignment-matrix](best-practices/microsoft-alignment.md)) houden de blueprint
+  current, generiek en consultant-klaar.
 
 > **Let op — geen juridisch of bouwtechnisch advies.** Voorbeelden rond
 > Bouwbesluit/Bbl, NEN-normen en vergunningen zijn illustratief. Laat regelgeving

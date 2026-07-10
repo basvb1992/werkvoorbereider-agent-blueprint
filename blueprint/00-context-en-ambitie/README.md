@@ -27,6 +27,9 @@ niet past bij je organisatie.
 5. **Randvoorwaarden** — Security, privacy, IT-beleid, cloud-keuzes, budget, tijd.
 6. **Succesmaat** — Waaraan zie je over 3 maanden dat het werkt?
    (bv. "2 uur/week minder zoekwerk per WVB", "inkoopschema binnen 1 dag i.p.v. 1 week".)
+7. **Doel in Jobs-To-Be-Done** — vat het uitkomstgericht samen (Microsoft's
+   [agent design canvas](https://learn.microsoft.com/microsoft-copilot-studio/guidance/agent-design-canvas-framework)):
+   *"**Als** werkvoorbereider **wil ik** &lt;taak&gt; **zodat** &lt;uitkomst&gt;."*
 
 ## Voorbeeld uit de bouw
 

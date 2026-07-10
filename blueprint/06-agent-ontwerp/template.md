@@ -28,6 +28,9 @@
 ### 5. Triggers
 - <hoe wordt de agent aangeroepen? vraag van gebruiker / conversation starter / door orchestrator>
 
+### 5b. Kanalen (channels)
+- <waar draait de agent? Teams / webchat / Microsoft 365 Copilot / e-mail>
+
 ### 6. Autonomie & mens-in-de-loop
 - **Niveau:** < augment (mens beslist) | automate met controle | automate >
 - **Controlemoment:** <waar keurt een mens goed?>

@@ -58,6 +58,10 @@ Loop ze langs en noteer wat voor jou relevant is:
 - **"Alles indexeren".** Meer data ≠ beter. Begin met de bronnen die de gekozen
   use-case echt nodig heeft.
 
+> **Data-design & RAG:** voor kennisbron-keuze (SharePoint/Dataverse/connectors),
+> freshness, security-trimming en Dataverse-synonyms/glossary — zie
+> [best-practices/data-design.md](../../best-practices/data-design.md).
+
 ## Ingevuld referentievoorbeeld
 
 Zie het data-register in
