@@ -10,6 +10,10 @@
 
 - Koppel **alleen de projectmap met actuele, geaccordeerde revisies**.
 - Zet gevoelige mappen (prijzen, contracten) **niet** als knowledge source.
+- **Mappenstructuur per project** op domein (contract, bestek, vergunningen, inkoop,
+  planning, oplevering) houdt gevoelige mappen apart én maakt provisioning simpel.
+  Voorbeeld + projectmap-automatisering:
+  [implementatie-voorbeeld/sharepoint-documenten.md](../../referentie/implementatie-voorbeeld/sharepoint-documenten.md).
 
 ## Acties koppelen
 

@@ -28,13 +28,25 @@ Kandidaten voor een volgende ronde:
 
 ## Blueprint / inhoud
 
-- **Fase B: werkende demo — GESTART.** Runbook voor de **moderne Bestek-agent**
-  (augment/kennis, geen Dataverse) staat in
+- **Fase B: werkende demo (Bestek, augment/kennis) — runbook klaar.** Staat in
   [referentie/implementatie-voorbeeld/](referentie/implementatie-voorbeeld/README.md).
-  Volgende: bouwen in de gekozen demo-omgeving (interactieve sign-in vereist).
-  **Fase C** = een automate-use-case (Inkoop) met Dataverse + `pac`.
-- **ROCKET-interpretatie bevestigen** — huidige invulling: Role · Objective ·
-  Context · Key results · Examples · Tone. Definitief maken met de gebruiker.
+- **Fase C: automate-met-controle (Inkoop) — GESTART.** Runbook, ROCKET-instructie,
+  testset, [Dataverse-ontwerp](referentie/implementatie-voorbeeld/inkoop-dataverse-design.md)
+  en een **idempotent scaffold-script** (Web API) staan klaar. De schrijf-actie maakt
+  een **concept-inkoopaanvraag** (status `Concept`) met bevestiging. Volgende:
+  Dataverse live scaffolden en de agent in de demo-omgeving bouwen.
+- **Documentlaag — SharePoint (demo).** Runbook voor SharePoint als **kennisbron**
+  (Bestek-agent) én **projectmap-provisioning** (automate met controle) staat in
+  [referentie/implementatie-voorbeeld/sharepoint-documenten.md](referentie/implementatie-voorbeeld/sharepoint-documenten.md).
+  Volgende: live koppelen van de kennisbron en de provisioning-flow bouwen.
+- **Overige agents — build-kits + datalaag.** Build-kits (ROCKET + tools + testset) voor
+  Compliance / Planning / Mensen / Oplever / Meer-/minderwerk + de Project Coach-
+  orchestrator staan in [referentie/implementatie-voorbeeld/](referentie/implementatie-voorbeeld/README.md);
+  de Dataverse-datalaag (6 tabellen) is scriptbaar en **live gescaffold**. Volgende:
+  de agents in de Copilot Studio-UI bouwen + publiceren, dan de orchestrator koppelen.
+- **ROCKET-interpretatie VASTGESTELD (optie B):** Role · Objective · Context ·
+  **Knowledge** · **Expectations** · Tone. `referentie/rocket-principe.md` bijgewerkt; de
+  live agents volgen deze indeling.
 - **Moderne Copilot Studio-agents** — bouwen via de UI; er is geen ondersteunde
   `pac copilot push` round-trip voor moderne agents (vastgelegd in `best-practices/`).
 

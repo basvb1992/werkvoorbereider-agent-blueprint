@@ -7,15 +7,17 @@ stramien. Zo zijn de instructies compleet, consistent en toetsbaar.
 | Letter | Staat voor | Vraag die het beantwoordt |
 |---|---|---|
 | **R** | **Role** | Wie is de agent? Welke rol/expertise/persona? |
-| **O** | **Objective** | Wat is de concrete opdracht/het doel? |
+| **O** | **Objective** | Wat is de concrete opdracht/het doel — inclusief wat een goed resultaat is (bronvermelding, geen gok, meetbare output)? |
 | **C** | **Context** | Op welke projectcontext, kennisbronnen en systemen baseert de agent zich? |
-| **K** | **Key results** | Wat is een goed resultaat? (bronvermelding, geen gok, meetbare output) |
-| **E** | **Examples** | Voorbeelden én randgevallen — inclusief wat de agent **niet** doet. |
+| **K** | **Knowledge** | Op welke kennis-/databronnen baseert de agent zich — en uitsluitend die? |
+| **E** | **Expectations** | Gedragsregels, output-/bronstructuur én grenzen — inclusief wat de agent **niet** doet (en voorbeelden). |
 | **T** | **Tone** | Taal, toon en stijl (NL, bouwtaal, zakelijk, met bronnen). |
 
-> **Let op — interpretatie.** Dit is de gehanteerde invulling van ROCKET. Hanteert
-> jouw organisatie een andere betekenis van de letters? Pas hem **hier centraal**
-> aan; de use-cases verwijzen naar dit document.
+> **Let op — interpretatie.** Dit is de **vastgestelde** invulling: **K = Knowledge**,
+> **E = Expectations**, **T = Tone** — *Key results* valt onder **Objective** en
+> *voorbeelden* horen onder **Expectations**. De **live agents** volgen deze indeling.
+> Hanteert jouw organisatie een andere betekenis? Pas hem **hier centraal** aan; de
+> use-cases verwijzen naar dit document.
 
 ## Aanvullende regels (Microsoft-guidance)
 

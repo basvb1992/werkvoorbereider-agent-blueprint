@@ -68,6 +68,10 @@ Zie het data-register in
 [referentie/usecase-bestek/README.md](../../referentie/usecase-bestek/README.md#stap-02--data)
 en het fictieve bronmateriaal in [voorbeelddata/](../../voorbeelddata/).
 
+> **Documentlaag concreet:** een uitgewerkt voorbeeld van SharePoint als kennisbron
+> én document-automatisering (mappenstructuur per project) staat in
+> [referentie/implementatie-voorbeeld/sharepoint-documenten.md](../../referentie/implementatie-voorbeeld/sharepoint-documenten.md).
+
 ---
 
 ➡️ Vul de [template](template.md) in en ga door naar

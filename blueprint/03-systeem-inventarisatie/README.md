@@ -42,6 +42,11 @@ De integratievorm bepaalt of de agent kan **lezen**, **schrijven** of alleen
 > Veel calculatie- en BIM-tools bieden alleen export → geschikt als kennisbron,
 > niet voor acties.
 
+> **SharePoint = twee kanten.** Als **kennisbron** (lezen/RAG: bestek, contracten,
+> normen) én als **actie-doel** via de **SharePoint-connector** (mappen/bestanden
+> aanmaken — bv. een projectmap-structuur klaarzetten). Concreet voorbeeld:
+> [referentie/implementatie-voorbeeld/sharepoint-documenten.md](../../referentie/implementatie-voorbeeld/sharepoint-documenten.md).
+
 ## Invulvragen (per systeem)
 
 1. **Systeem** — Naam + functie.
