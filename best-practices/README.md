@@ -14,9 +14,12 @@ repo toepassen**.
 | [data-design.md](data-design.md) | Kennis/RAG- en Dataverse-datamodel-best-practices |
 | [process-decomposition.md](process-decomposition.md) | Businessproces-decompositie (waardestroom → taak) |
 | [construction-industry.md](construction-industry.md) | NL-bouw standaarden + **consultant-customisatiegids** |
+| [business-case.md](business-case.md) | **Business case & waarde:** waarde-drivers, ROI, sponsor, baseline, adoptie (vóór je bouwt) |
 
 ## Hoe gebruik je dit?
 
+- **Business & sponsors:** begin bij de [business case](business-case.md) — waarde,
+  sponsor en baseline (bij [stap 00](../blueprint/00-context-en-ambitie/) / [05](../blueprint/05-usecase-prioritering/)).
 - **Ontwerpers/consultants:** loop bij [stap 06–09](../blueprint/) de relevante pagina
   langs; gebruik de [alignment-matrix](microsoft-alignment.md) als checklist.
 - **Onderhoud:** werk de bronlinks + "laatst getoetst"-datum bij als Microsoft de

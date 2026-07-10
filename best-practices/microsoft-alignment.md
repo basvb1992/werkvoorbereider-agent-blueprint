@@ -22,6 +22,21 @@ Bron: [Agent Design Framework](https://learn.microsoft.com/microsoft-copilot-stu
 | Governance & risk | Access, guardrails, logging, owner | [stap 09](../blueprint/09-governance-en-adoptie/) | ✅ (verrijkt) |
 | Evaluation & optimization | Evalueer als ontwerp, negatieve tests | [stap 08](../blueprint/08-bouwen-en-testen/) | ✅ |
 
+## Business case & planning (ROI)
+
+Bron: [Plan your Copilot Studio projects](https://learn.microsoft.com/microsoft-copilot-studio/guidance/plan-overview) ·
+[Measure ROI & business value](https://learn.microsoft.com/microsoft-copilot-studio/guidance/agent-business-value-overview).
+
+| Best practice | Waar in de repo | Status |
+|---|---|---|
+| Definieer waarde vóór je bouwt (discovery-vragen) | [stap 00](../blueprint/00-context-en-ambitie/) + [business-case](business-case.md) | ➕ |
+| Vier waarde-drivers (efficiency/quality/revenue/strategic) | [business-case](business-case.md) | ➕ |
+| Cross-functioneel team + benoemde sponsor | [business-case](business-case.md) + tool-rolbadges | ➕ |
+| Prioriteer risico's + workarounds | [stap 05](../blueprint/05-usecase-prioritering/) | ➕ |
+| Baseline vastleggen (FTE × uren × tarief) vóór go-live | [stap 00](../blueprint/00-context-en-ambitie/) + [business-case](business-case.md) | ➕ |
+| Adoptie-hefbomen (managers eerst, ankertaak, sponsor-cadans) | [stap 09](../blueprint/09-governance-en-adoptie/) + [business-case](business-case.md) | ➕ |
+| Meten: Analytics + savings calculator + Viva Insights | [stap 09](../blueprint/09-governance-en-adoptie/) | ➕ |
+
 ## Multi-agent orchestration
 
 Bron: [Multi-agent orchestration patterns](https://learn.microsoft.com/microsoft-copilot-studio/guidance/multi-agent-patterns).

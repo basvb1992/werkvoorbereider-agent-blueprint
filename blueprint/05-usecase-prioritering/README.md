@@ -46,6 +46,9 @@ quadrantChart
 3. **Haalbaarheid-score** — 1–5, met korte onderbouwing.
 4. **Type** — Augment of automate?
 5. **Startkeuze** — Welke 1–3 begin je mee? Waarom?
+6. **Risico's & workarounds** — welke onzekerheden (data, koppeling, gevoeligheid)
+   kunnen de bouw blokkeren, en wat is de praktische workaround? (Microsoft:
+   [prioritize risks](https://learn.microsoft.com/microsoft-copilot-studio/guidance/project-planning).)
 
 ## Voorbeeld uit de bouw
 
@@ -69,6 +72,9 @@ Onze rode draad kiest **"bestek doorzoeken & eisen samenvatten"** als eerste,
 volledig uitgewerkt in [referentie/usecase-bestek/](../../referentie/usecase-bestek/).
 De bredere set (alle sub-agents) staat in
 [referentie/project-coach/sub-agents.md](../../referentie/project-coach/sub-agents.md).
+
+> **Onderbouw de waarde:** koppel elke kandidaat aan een waarde-driver en een
+> baseline — zie [best-practices/business-case.md](../../best-practices/business-case.md).
 
 ---
 

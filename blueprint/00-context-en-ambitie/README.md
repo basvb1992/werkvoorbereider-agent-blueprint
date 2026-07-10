@@ -30,6 +30,9 @@ niet past bij je organisatie.
 7. **Doel in Jobs-To-Be-Done** — vat het uitkomstgericht samen (Microsoft's
    [agent design canvas](https://learn.microsoft.com/microsoft-copilot-studio/guidance/agent-design-canvas-framework)):
    *"**Als** werkvoorbereider **wil ik** &lt;taak&gt; **zodat** &lt;uitkomst&gt;."*
+8. **Business case** — welke [waarde-driver](../../best-practices/business-case.md)
+   raak je (efficiency, kwaliteit, omzet, strategisch), wie is de **sponsor**
+   (mandaat/budget), en wat is de **baseline** (huidige uren/faalkosten)?
 
 ## Voorbeeld uit de bouw
 
@@ -48,6 +51,8 @@ niet past bij je organisatie.
   Zonder dat blijf je bij assisteren.
 - **Geen succesmaat.** Zonder meetbare doelstelling kun je later niet aantonen
   dat de agent waarde levert (belangrijk voor [stap 09](../09-governance-en-adoptie/)).
+- **Geen sponsor of geen baseline.** Zonder mandaat en een nulmeting heb je later
+  geen verhaal richting directie. Zie [best-practices/business-case.md](../../best-practices/business-case.md).
 
 ## Ingevuld referentievoorbeeld
 

@@ -75,7 +75,9 @@ flowchart TD
    [Planning & Capaciteit](referentie/usecase-planning/),
    [Oplever](referentie/usecase-oplever/), [Mensen-service](referentie/usecase-mensen/)).
 4. **Gebruik de interactieve tool.** Open [tool/index.html](tool/index.html) in
-   je browser om de 9 stappen als canvas in te vullen en te exporteren.
+   je browser: een begeleide **bouwgids** met rolbadges (business ↔ IT),
+   checklists, praktische tips en een ROCKET prompt-starter — vul de 9 stappen in
+   en exporteer je blueprint (Markdown of JSON).
 
 ---
 
@@ -86,7 +88,7 @@ flowchart TD
 | [blueprint/](blueprint/) | De 9 stappen: per stap een hoofdstuk + invulbare template |
 | [referentie/](referentie/) | Uitgewerkt voorbeeld: multi-agent architectuur + diepe use-case |
 | [voorbeelddata/](voorbeelddata/) | Fictief mini-bouwproject als oefenmateriaal |
-| [tool/](tool/) | Interactieve HTML-canvas om de blueprint in te vullen |
+| [tool/](tool/) | Interactieve HTML-**bouwgids** (guideline + checklist + tips) om de blueprint in te vullen |
 
 ---
 
@@ -101,6 +103,12 @@ flowchart TD
   agent design canvas; de [best practices](best-practices/README.md) (met
   [alignment-matrix](best-practices/microsoft-alignment.md)) houden de blueprint
   current, generiek en consultant-klaar.
+- **Business vóór techniek:** begin bij de [business case](best-practices/business-case.md)
+  — waarde-drivers, sponsor, baseline en adoptie (Microsoft's *plan your project* /
+  *measure ROI*-guidance), niet bij de tool.
+- **Doelgroep & toon:** geschreven voor mensen in de bouw of bij een IT-partij die
+  de bouw bedient; vakkennis wordt verondersteld, de toon is collegiaal en praktisch
+  (zie [WAY-OF-WORKING.md](WAY-OF-WORKING.md#doelgroep--toon)).
 
 > **Let op — geen juridisch of bouwtechnisch advies.** Voorbeelden rond
 > Bouwbesluit/Bbl, NEN-normen en vergunningen zijn illustratief. Laat regelgeving

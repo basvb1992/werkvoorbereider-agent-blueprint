@@ -10,6 +10,17 @@ De blueprint is **generiek**; **consultants** en makers passen hem per bedrijf a
 
 ---
 
+## Doelgroep & toon
+
+Deze blueprint is geschreven voor mensen die **in de bouw werken** of bij een
+**IT-partij die de bouw bedient**. We veronderstellen vakkennis: begrippen als
+*bestek, oplevering, meer-/minderwerk, faalkosten, marge, RAW/STABU* en basale
+Power Platform-termen leggen we niet uit. De toon is **collegiaal, direct en
+praktisch** — peer-to-peer, geen managementtaal. Consultants houden deze toon aan
+bij het aanpassen per bedrijf.
+
+---
+
 ## Prototype eerst, ontwerp vóór je opschaalt
 
 Microsoft's guidance is helder: **niet elke agent vraagt vooraf zwaar ontwerp**,
@@ -21,6 +32,18 @@ werkvoorbereidingsagent valt in die categorie. Bron:
 De balans:
 1. **Prototype snel** om haalbaarheid en gedrag te leren.
 2. **Pauzeer en ontwerp bewust** vóór je opschaalt of automatiseert.
+
+---
+
+## Vooraf: de business case
+
+Microsoft's guidance begint niet bij techniek maar bij **waarde**: *plan je project*
+en *definieer de waarde vóór je bouwt* (waarde-drivers, sponsor, baseline, adoptie).
+Neem dit mee in [stap 00](blueprint/00-context-en-ambitie/) en
+[stap 05](blueprint/05-usecase-prioritering/) — details in
+[best-practices/business-case.md](best-practices/business-case.md). Bronnen:
+[Plan your projects](https://learn.microsoft.com/microsoft-copilot-studio/guidance/plan-overview) ·
+[Measure ROI & business value](https://learn.microsoft.com/microsoft-copilot-studio/guidance/agent-business-value-overview).
 
 ---
 

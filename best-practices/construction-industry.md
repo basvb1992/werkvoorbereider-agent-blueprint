@@ -46,6 +46,8 @@ Wat je **per bedrijf** aanpast (en waar):
 6. **Succesmaat & KPI's** — stem af op de business (uren, faalkosten, doorlooptijd).
    → [stap 00](../blueprint/00-context-en-ambitie/) + [stap 09](../blueprint/09-governance-en-adoptie/).
 7. **Merk & kanaal** — naam, conversation starters, Teams/kanaalkeuze. → [stap 06/07](../blueprint/06-agent-ontwerp/).
+8. **Toon & doelgroep** — schrijf voor bouwvakkennis en houd de toon collegiaal en
+   praktisch (geen managementtaal). → [WAY-OF-WORKING.md](../WAY-OF-WORKING.md#doelgroep--toon).
 
 > **Aanpak:** begin met **één** hoog-waarde use-case (vaak Bestek of Compliance),
 > bewijs de waarde, en breid daarna uit — precies de *prototype-first, design-before-

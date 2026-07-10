@@ -45,7 +45,19 @@ betrouwbaarheid, aansprakelijkheid en regelgeving. Deze stap borgt drie dingen:
 - **Feedbacklus** — maak het makkelijk om foute antwoorden te melden; voed dat
   terug in de verbeterlus (stap 08).
 - **Impact meten** — meet tegen de succesmaat uit [stap 00](../00-context-en-ambitie/):
-  bespaarde tijd, minder faalkosten, gebruikstevredenheid.
+  bespaarde tijd, minder faalkosten, gebruikstevredenheid. Gebruik **Copilot Studio
+  Analytics** + de **savings calculator**, en tenant-breed het **Viva Insights
+  Copilot Studio agents report**.
+
+**Adoptie-hefbomen (Microsoft, op impact-volgorde):** rol-gebaseerde training met
+**managers/uitvoerders eerst**; anker de agent aan **één benoemde, hoog-volume taak**;
+**zichtbaar voorbeeldgedrag** van leiding; een **gedeelde prompt-bibliotheek**;
+**zichtbare guardrails**; en een **kwartaalritme** (90 dagen meten tegen baseline,
+bespreken met de **sponsor**, dan schalen of stoppen).
+
+**Waarde groeit in fasen:** dag 1–90 adoptie + efficiency · dag 91–1 jaar kwaliteit +
+omzet · jaar 2+ strategische waarde. Zie
+[best-practices/business-case.md](../../best-practices/business-case.md).
 
 ## D. Governance & ALM (Microsoft-platform)
 
@@ -73,7 +85,8 @@ Sluit aan op de Copilot Studio governance-guidance
 3. Hoe is revisiebeheer geborgd?
 4. Hoe wordt privacy/AVG afgedekt?
 5. Wat is het adoptieplan (pilot, training, feedback)?
-6. Welke KPI's meten de impact?
+6. Welke KPI's meten de impact, en aan welke **waarde-driver** hangen ze?
+7. Wie is de **sponsor** en met welke **cadans** worden de resultaten besproken?
 
 ## Valkuilen
 
