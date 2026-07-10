@@ -1,7 +1,7 @@
 # Offertes & leveranciers (FICTIEF) — Woongebouw "De Beemster"
 
 > ⚠️ **FICTIEF EN ILLUSTRATIEF.** Verzonnen leveranciers en offertes om de
-> [Inkoop-use-case](../referentie/usecase-inkoop/README.md) mee te oefenen. Bedragen
+> [Inkoop & Materialen-use-case](../referentie/usecase-inkoop-materialen/README.md) mee te oefenen. Bedragen
 > zijn **fictief** en niet marktconform. Bootst **Project Operations** inkoop +
 > offertes (SharePoint) na; in de demo als lijsten/tabellen **"Leveranciers"** /
 > **"Offertes"**.

@@ -1,9 +1,12 @@
-# Use-case: Planning — uitvoeringsplanning bewaken en bijsturen
+# Use-case: Planning & Capaciteit — planning bewaken, bijsturen en resources borgen
 
-Vierde volledig uitgewerkte use-case — de **Planning-agent**. Dit is de eerste
-**actie-agent**: hij leunt op **Dynamics 365 Project Operations** (Dataverse) in
-plaats van SharePoint-kennis, en introduceert het werken met gestructureerde
-projectdata volgens de *augment→automate*-ladder.
+Use-case voor het **planning- & capaciteitsdomein** van de werkvoorbereider. Dit is
+de eerste **actie-agent**: hij leunt op **Dynamics 365 Project Operations**
+(Dataverse) i.p.v. SharePoint-kennis, en introduceert gestructureerde projectdata
+volgens de *augment→automate*-ladder. **Planning is eigenaar van het schema**; voor
+*beschikbaarheid* van mensen roept hij de herbruikbare
+[Mensen-service](../usecase-mensen/README.md) aan (zie
+[decompositie-verantwoording](../project-coach/architectuur.md#decompositie-verantwoording)).
 
 > **Samenvatting:** de werkvoorbereider vraagt naar de status van de planning. De
 > agent leest de projectplanning (WBS/mijlpalen), toont het **kritieke pad**,
@@ -128,7 +131,9 @@ wijzigingen**.
 
 ## Samenwerking met andere agents
 
-De **Project Coach** combineert **Planning** met **Mensen** (zijn de resources
-beschikbaar?) en **Materialen** (zijn de leveringen op tijd?) tot een
-haalbaarheidsbeeld. Zie [sub-agents.md](../project-coach/sub-agents.md) en het
+De **Project Coach** combineert **Planning & Capaciteit** met de
+**[Mensen-service](../usecase-mensen/README.md)** (zijn de resources beschikbaar en
+gecertificeerd?) en **[Inkoop & Materialen](../usecase-inkoop-materialen/README.md)**
+(zijn de leveringen op tijd?) tot een haalbaarheidsbeeld. Zie
+[sub-agents.md](../project-coach/sub-agents.md) en het
 [ROCKET-principe](../rocket-principe.md).

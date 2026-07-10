@@ -1,7 +1,7 @@
 # Materialen & voorraad (FICTIEF) — Woongebouw "De Beemster"
 
 > ⚠️ **FICTIEF EN ILLUSTRATIEF.** Verzonnen materiaal-/voorraaddata om de
-> [Materialen-use-case](../referentie/usecase-materialen/README.md) mee te oefenen.
+> [Inkoop & Materialen-use-case](../referentie/usecase-inkoop-materialen/README.md) mee te oefenen.
 > Bootst **Field Service** producten/voorraad/magazijnen na; in de demo als
 > Dataverse-tabel **`Materiaal`** of SharePoint-lijst **"Materialen"**.
 

@@ -1,7 +1,8 @@
-# Skelet — Mensen-agent
+# Skelet — Mensen-service (herbruikbare agent)
 
-1. **Doel** — Ondersteunt bemensing: beschikbaarheid, certificaten,
-   planningsconflicten en vervanging.
+1. **Doel** — Levert bemensing: beschikbaarheid, certificaten, planningsconflicten
+   en vervanging. **Herbruikbare service** (eigen governance: certificaten/AVG);
+   **Planning & Capaciteit** is eigenaar van het schema.
 2. **Fase** — Werkvoorbereiding + uitvoering.
 3. **Kennis/data** — *Automate:* **Field Service** bookable resources + bookings +
    schedule board. Certificatenregister (Dataverse/SharePoint).

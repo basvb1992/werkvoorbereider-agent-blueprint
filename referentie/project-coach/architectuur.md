@@ -54,21 +54,22 @@ flowchart TD
   WVB[Werkvoorbereider] --> UI[Teams / Copilot]
   UI --> PC[Project Coach\norchestrator]
   PC --> BA[Bestek & Tekeningen]
-  PC --> ME[Mensen]
-  PC --> MA[Materialen]
-  PC --> PL[Planning]
-  PC --> IN[Inkoop/Leveranciers]
   PC --> CO[Compliance/Regelgeving]
+  PC --> IM[Inkoop & Materialen]
+  PC --> PL[Planning & Capaciteit]
   PC --> MM[Meer-/minderwerk]
   PC --> OP[Oplever & Kwaliteit]
+  PL -. resource-check .-> ME[Mensen-service]
+  PC -. direct .-> ME
   BA --> K[(Kennis: bestek, tekeningen, normen)]
-  MA --> D[(ERP / Dataverse)]
-  ME --> D
+  IM --> D[(ERP / Dataverse: FS + PO)]
+  PL --> D
 ```
 
 **Waarom multi-agent?**
 
-- Elk domein (mensen, materialen, bestek, …) heeft eigen data, systemen en regels.
+- Elk **domein** (bestek, compliance, inkoop & materialen, planning, …) heeft eigen
+  data, systemen en regels. We decomponeren op **WVB-domein**, niet per bronsysteem.
 - Sub-agents kunnen **los** worden ontwikkeld, getest en verbeterd.
 - De werkvoorbereider heeft **één** ingang (de Coach) en hoeft niet te weten welke
   agent wat doet.
@@ -84,17 +85,51 @@ De volledige sub-agent-catalogus staat in [sub-agents.md](sub-agents.md).
 
 ---
 
+## Decompositie-verantwoording
+
+We decomponeren bewust op **domein van de werkvoorbereider** (jobs-to-be-done), niet
+per bronsysteem. Dat sluit aan op de Microsoft multi-agent best practices ("splits
+alleen bij een echt apart kennis/tools-domein, andere governance of herbruik; 1
+kennisbron per sub-agent, geen overlap").
+
+**6 kern-sub-agents + 1 herbruikbare service:**
+
+| Domein | Waarom apart | Laag |
+|---|---|---|
+| Bestek & Tekeningen | eigen kennisdomein (bestek/tekeningen) | augment |
+| Compliance / Regelgeving | aparte governance (juridisch), eigen kennis (Bbl/NEN) | augment |
+| Inkoop & Materialen | één inkoop-/materiaalproces (behoefte→voorraad→offerte→bestellen) | augment→automate |
+| Planning & Capaciteit | eigen data (WBS/mijlpalen); **eigenaar van het schema** | automate |
+| Meer-/minderwerk | financieel/contractueel, eigen governance | augment→automate |
+| Oplever & Kwaliteit | eigen data (keuringen/restpunten/assets) | automate |
+| **Mensen** (service) | **herbruikbaar** + aparte governance (**certificaten/AVG**) | automate |
+
+**Bewuste keuzes (t.o.v. de eerdere 8-agent-opzet):**
+
+- **Materialen samengevoegd met Inkoop** → *Inkoop & Materialen*. Voor de WVB is dit
+  één proces; los houden gaf **overlappende beschrijvingen** en routing-verwarring.
+- **Mensen** blijft **apart**, maar als **herbruikbare service** (bestaat al als
+  Mensen agent 2.0; certificaten/**AVG** = eigen governance). **Planning & Capaciteit**
+  bezit het schema en roept de Mensen-service aan voor beschikbaarheid — zo vermijden
+  we schedule-overlap tussen Planning en Mensen.
+- **Systemen (Field Service / Project Operations) zijn een data-/toollaag**, geen
+  agent-grens. Meerdere agents delen dezelfde Dataverse-backbone.
+
+---
+
 ## Integratiematrix
 
 *(ingevuld voorbeeld bij [blueprint stap 03](../../blueprint/03-systeem-inventarisatie/))*
 
 | Systeem | Functie | Data (cat.) | Integratievorm | Rechten | Voor welke sub-agent |
 |---|---|---|---|---|---|
-| SharePoint (projectmap) | DMS | A, H | export / knowledge source | lezen | Bestek & Tekeningen |
-| 4PS Construct (Dynamics 365) | ERP | B, C, D | Dataverse | lezen (later schrijven) | Materialen, Inkoop |
-| Rooster/HR-systeem | Bemensing | — | connector / Dataverse | lezen | Mensen |
-| IBIS | Calculatie | B, C | export | interpreteren | Materialen, Meer-/minderwerk |
-| Revit / BIM-server | BIM | A, C | export (IFC) | interpreteren | Bestek, Materialen |
+| SharePoint (projectmap) | DMS | A, H | export / knowledge source | lezen | Bestek & Tekeningen, Compliance |
+| Field Service (Dataverse) | Werkorders/resources/voorraad | C, G | Dataverse | lezen | Inkoop & Materialen, Mensen-service, Oplever |
+| Project Operations (Dataverse) | Projecten/WBS/inkoop | B, D, E | Dataverse | lezen | Planning & Capaciteit, Inkoop & Materialen |
+| 4PS Construct (Dynamics 365) | ERP | B, C, D | Dataverse | lezen (later schrijven) | Inkoop & Materialen |
+| Rooster/HR-systeem | Bemensing | — | connector / Dataverse | lezen | Mensen-service |
+| IBIS | Calculatie | B, C | export | interpreteren | Inkoop & Materialen, Meer-/minderwerk |
+| Revit / BIM-server | BIM | A, C | export (IFC) | interpreteren | Bestek, Inkoop & Materialen |
 | Bouwapp / Dalux | Bouwplaats | G | connector (indien beschikbaar) | lezen | Oplever & Kwaliteit |
 
 **Least privilege:** de Bestek & Tekeningen-agent krijgt alleen-lezen toegang tot

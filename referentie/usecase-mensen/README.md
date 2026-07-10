@@ -1,8 +1,12 @@
-# Use-case: Mensen — bemensing, certificaten en beschikbaarheid
+# Use-case: Mensen — bemensing, certificaten en beschikbaarheid (herbruikbare service-agent)
 
-Vijfde volledig uitgewerkte use-case — de **Mensen-agent** (actie-agent op
-**Dynamics 365 Field Service**). Sluit aan op de bestaande **Mensen agent 2.0** in
-de demo-omgeving.
+Use-case voor de **Mensen-service**: een **herbruikbare** sub-agent (actie-agent op
+**Dynamics 365 Field Service**) die al bestaat als de **Mensen agent 2.0** in de
+demo-omgeving. Hij is bewust een **aparte service** vanwege een eigen
+governance-grens (**certificaten, AVG/persoonsgegevens**) en herbruik buiten de WVB.
+**Planning & Capaciteit is eigenaar van het schema**; deze service levert de
+*beschikbaarheid, certificaten en vervanging* (zie
+[decompositie-verantwoording](../project-coach/architectuur.md#decompositie-verantwoording)).
 
 > **Samenvatting:** de werkvoorbereider zoekt de juiste, beschikbare en
 > gecertificeerde mensen. De agent doorzoekt bookable resources en het schedule
@@ -121,7 +125,8 @@ akkoord**, geen onnodige persoonsgegevens.
 
 ## Samenwerking met andere agents
 
-De **Project Coach** koppelt **Mensen** aan **Planning** (welke taak vraagt wanneer
-mensen?) en **Materialen** (is het werk uitvoerbaar?). Zie
-[sub-agents.md](../project-coach/sub-agents.md) en het
+De **Project Coach** (of de **[Planning & Capaciteit](../usecase-planning/README.md)**-agent)
+roept de **Mensen-service** aan voor beschikbaarheid, certificaten en vervanging.
+Planning bezit het schema; deze service bezit de resource-/certificaatgegevens
+(AVG). Zie [sub-agents.md](../project-coach/sub-agents.md) en het
 [ROCKET-principe](../rocket-principe.md).

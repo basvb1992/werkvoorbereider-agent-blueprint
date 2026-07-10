@@ -1,7 +1,8 @@
-# Skelet — Planning-agent
+# Skelet — Planning & Capaciteit-agent
 
-1. **Doel** — Helpt de uitvoeringsplanning opstellen en bewaken; signaleert
-   mijlpalen, kritieke pad en afwijkingen.
+1. **Doel** — Helpt de planning opstellen en bewaken (mijlpalen, kritiek pad,
+   afwijkingen) én borgt de capaciteit. **Eigenaar van het schema**; roept de
+   [Mensen-service](mensen.md) aan voor beschikbaarheid.
 2. **Fase** — Werkvoorbereiding + uitvoering.
 3. **Kennis/data** — *Automate:* projectplanning in **Project Operations** (WBS,
    taken, mijlpalen, %-gereed). *Augment (optioneel):* planningsexport/weekplanning

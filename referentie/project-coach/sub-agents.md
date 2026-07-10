@@ -5,17 +5,18 @@ agents zijn hier **globaal opgezet** (doel, scope, kennis, tools, autonomie); de
 **Bestek & Tekeningen**-agent is volledig uitgewerkt in
 [../usecase-bestek/README.md](../usecase-bestek/README.md). Consistente **skeletons**
 per agent (met mock-plan voor de demo) staan in [../agent-skeletons/](../agent-skeletons/).
+De architectuur telt **6 kern-sub-agents** plus de herbruikbare **Mensen-service**;
+zie de [decompositie-verantwoording](architectuur.md#decompositie-verantwoording).
 
 | Sub-agent | Status | Kern |
 |---|---|---|
 | Bestek & Tekeningen | ✅ uitgewerkt | Eisen uit bestek/tekeningen zoeken en samenvatten |
-| Mensen | ✅ uitgewerkt | Bemensing, certificaten, beschikbaarheid, vervanging |
-| Materialen | ✅ uitgewerkt | Materialen, hoeveelheden, bestellingen |
-| Planning | ✅ uitgewerkt | Uitvoeringsplanning, mijlpalen, voortgang |
-| Inkoop / Leveranciers | ✅ uitgewerkt | Offertes aanvragen/vergelijken, onderaannemers |
 | Compliance / Regelgeving | ✅ uitgewerkt | Bbl/Bouwbesluit, NEN, vergunningen, V&G |
+| Inkoop & Materialen | ✅ uitgewerkt | Behoefte, voorraad, levertijd, offertes, leveranciers |
+| Planning & Capaciteit | ✅ uitgewerkt | Planning, mijlpalen, voortgang, capaciteit |
 | Meer-/minderwerk | ✅ uitgewerkt | Wijzigingen detecteren en onderbouwen |
 | Oplever & Kwaliteit | ✅ uitgewerkt | Restpunten, opleverdossier |
+| Mensen (herbruikbare service) | ✅ uitgewerkt | Beschikbaarheid, certificaten, vervanging (AVG) |
 
 ---
 
@@ -29,11 +30,13 @@ per agent (met mock-plan voor de demo) staan in [../agent-skeletons/](../agent-s
 - **Autonomie:** *augment* — stelt concept voor, WVB controleert.
 - **Volledig uitgewerkt:** zie [usecase-bestek »](../usecase-bestek/README.md).
 
-## ✅ Mensen (uitgewerkt)
+## ✅ Mensen — herbruikbare service (uitgewerkt)
 
 > **Skelet:** [agent-skeletons/mensen.md](../agent-skeletons/mensen.md) · **Volledig uitgewerkt:** [usecase-mensen »](../usecase-mensen/README.md)
+>
+> *Aparte, herbruikbare service (eigen governance: certificaten/AVG). **Planning & Capaciteit** bezit het schema.*
 
-- **Doel:** ondersteunt bemensing van projecten — beschikbaarheid,
+- **Doel:** levert bemensing — beschikbaarheid,
   certificaten/diploma's, planningsconflicten, vervangingsverzoeken.
 - **Kennis/data:** rooster/HR, certificatenregister.
 - **Tools:** zoek beschikbare medewerker, zoek verlopende certificaten, zoek
@@ -42,20 +45,24 @@ per agent (met mock-plan voor de demo) staan in [../agent-skeletons/](../agent-s
   concept).
 - **Integratie:** ERP/HR via Dataverse/connector.
 
-## ✅ Materialen (uitgewerkt)
+## ✅ Inkoop & Materialen (uitgewerkt)
 
-> **Skelet:** [agent-skeletons/materialen.md](../agent-skeletons/materialen.md) · **Volledig uitgewerkt:** [usecase-materialen »](../usecase-materialen/README.md)
+> **Skelet:** [agent-skeletons/inkoop-materialen.md](../agent-skeletons/inkoop-materialen.md) · **Volledig uitgewerkt:** [usecase-inkoop-materialen »](../usecase-inkoop-materialen/README.md)
+>
+> *Samenvoeging van de voormalige Materialen- en Inkoop-agents (één inkoop-/materiaaldomein).*
 
-- **Doel:** ondersteunt materiaal- en inkoopvragen — hoeveelheden, bestellijsten,
-  voorraad, levertijden.
-- **Kennis/data:** materiaalstaten, ERP (artikelen, orders).
-- **Tools:** materiaal opzoeken, bestelregel voorstellen, levertijd checken.
-- **Autonomie:** augment → automate-met-controle.
-- **Integratie:** 4PS/Dataverse.
+- **Doel:** behoefte bepalen, voorraad en levertijd checken, tekorten signaleren, en
+  offertes/leveranciers vergelijken — concept-bestellijst/offerteaanvraag.
+- **Kennis/data:** materiaalstaten + voorraad (Field Service), offertes + leveranciers/
+  inkoop (Project Operations), beide gemockt.
+- **Tools:** voorraad/levertijd checken, offertes vergelijken; *later:* bestelregel/PO.
+- **Autonomie:** augment; mens **gunt en bestelt**; **geen prijzen verzinnen**.
 
-## ✅ Planning (uitgewerkt)
+## ✅ Planning & Capaciteit (uitgewerkt)
 
 > **Skelet:** [agent-skeletons/planning.md](../agent-skeletons/planning.md) · **Volledig uitgewerkt:** [usecase-planning »](../usecase-planning/README.md)
+>
+> *Eigenaar van het schema; roept de Mensen-service aan voor beschikbaarheid.*
 
 - **Doel:** helpt de uitvoeringsplanning op te stellen en te bewaken; signaleert
   mijlpalen en afwijkingen.
@@ -63,16 +70,6 @@ per agent (met mock-plan voor de demo) staan in [../agent-skeletons/](../agent-s
 - **Tools (later):** planning lezen, afwijking signaleren.
 - **Autonomie:** augment.
 - **Uit te werken via:** [blueprint stappen 06-08](../../blueprint/06-agent-ontwerp/).
-
-## ✅ Inkoop / Leveranciers (uitgewerkt)
-
-> **Skelet:** [agent-skeletons/inkoop-leveranciers.md](../agent-skeletons/inkoop-leveranciers.md) · **Volledig uitgewerkt:** [usecase-inkoop »](../usecase-inkoop/README.md)
-
-- **Doel:** ondersteunt het inkoopproces — offertes aanvragen, vergelijken,
-  onderaannemers selecteren.
-- **Kennis/data:** offertes (PDF), leveranciers/onderaannemers, raamcontracten.
-- **Tools (later):** offerte-aanvraag opstellen, offertes normaliseren/vergelijken.
-- **Autonomie:** augment (concept-mails), mens gunt.
 
 ## ✅ Compliance / Regelgeving (uitgewerkt)
 

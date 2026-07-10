@@ -34,11 +34,10 @@ het beknopte skelet-overzicht (doel, systemen, mock-plan) van het hele team.
 | Bestek & Tekeningen | augment | SharePoint — bestek/tekeningen | ✅ diep → [usecase](../usecase-bestek/README.md) |
 | Compliance / Regelgeving | augment | SharePoint — Bbl/normen | ✅ diep → [usecase](../usecase-compliance/README.md) |
 | Meer-/minderwerk | augment→automate | SharePoint — wijzigingen (+ PO change orders) | ✅ diep → [usecase](../usecase-meerminderwerk/README.md) |
-| Planning | automate | **Project Operations** — WBS/taken | ✅ [usecase](../usecase-planning/README.md) · [skelet](planning.md) |
-| Mensen | automate | **Field Service** — bookable resources | ✅ [usecase](../usecase-mensen/README.md) · [skelet](mensen.md) |
-| Materialen | automate | **Field Service** — voorraad/producten | ✅ [usecase](../usecase-materialen/README.md) · [skelet](materialen.md) |
-| Inkoop / Leveranciers | augment→automate | **Project Operations** — inkoop/estimates | ✅ [usecase](../usecase-inkoop/README.md) · [skelet](inkoop-leveranciers.md) |
+| Planning & Capaciteit | automate | **Project Operations** — WBS/taken | ✅ [usecase](../usecase-planning/README.md) · [skelet](planning.md) |
+| Inkoop & Materialen | augment→automate | **Field Service** voorraad + **Project Operations** inkoop | ✅ [usecase](../usecase-inkoop-materialen/README.md) · [skelet](inkoop-materialen.md) |
 | Oplever & Kwaliteit | automate | **Field Service** — werkorders/inspecties | ✅ [usecase](../usecase-oplever/README.md) · [skelet](oplever-kwaliteit.md) |
+| **Mensen** (herbruikbare service) | automate | **Field Service** — bookable resources + certificaten (AVG) | ✅ [usecase](../usecase-mensen/README.md) · [skelet](mensen.md) |
 
 ---
 
@@ -50,7 +49,7 @@ flowchart LR
     B[Bestek] & C[Compliance] & M[Meer-/minderwerk]
   end
   subgraph Automate[Acties - Dataverse: Field Service / Project Operations]
-    P[Planning] & ME[Mensen] & MA[Materialen] & I[Inkoop] & O[Oplever]
+    P[Planning & Capaciteit] & IM[Inkoop & Materialen] & O[Oplever] & ME[Mensen-service]
   end
 ```
 
