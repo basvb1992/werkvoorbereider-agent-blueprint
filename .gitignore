@@ -12,6 +12,8 @@ power.config.*.backup.json
 
 # Ingevulde canvas-exports (bevatten mogelijk bedrijfsgegevens)
 *.canvas.json
+werkvoorbereider-blueprint.json
+werkvoorbereider-blueprint.md
 ingevuld/
 
 # OS / editor

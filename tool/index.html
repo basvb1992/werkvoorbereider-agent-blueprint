@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Werkvoorbereider Agent Blueprint — Canvas</title>
+<title>Werkvoorbereider Agent — Bouwgids</title>
 <script>
   (() => {
     const param = new URLSearchParams(window.location.search).get("scoutTheme");
@@ -166,16 +166,73 @@ a { color: var(--cp-link); }
   opacity: 0; pointer-events: none; transition: opacity 0.2s; font-size: 0.85rem;
 }
 .toast.show { opacity: 1; }
+
+/* --- verrijkte bouwgids-componenten --- */
+code { font-family: Consolas, "Courier New", Courier, monospace; font-size: 0.85em; background: var(--cp-surface-soft); padding: 1px 5px; border-radius: 4px; }
+
+nav.steps .start-btn { border: 1px solid var(--cp-border); background: var(--cp-bg-elevated); font-weight: 600; margin-bottom: 6px; }
+nav.steps .start-btn.active { background: var(--cp-accent-soft); border-color: var(--cp-accent); color: var(--cp-accent); }
+nav.steps .nav-heading { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--cp-text-soft); margin: 10px 4px 4px; }
+
+.badges { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 10px; }
+.badge { font-size: 0.72rem; padding: 3px 10px; border-radius: 999px; background: var(--cp-accent-soft); color: var(--cp-accent); border: 1px solid var(--cp-accent); font-weight: 600; white-space: nowrap; }
+.badge.soft { background: var(--cp-surface-soft); color: var(--cp-text-muted); border-color: var(--cp-border-strong); }
+
+.section { margin: 22px 0; }
+.section-title { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--cp-accent); font-weight: 700; margin: 0 0 8px; }
+.intro { font-size: 0.92rem; color: var(--cp-text-muted); margin: 0 0 4px; }
+
+.check { display: flex; gap: 10px; align-items: flex-start; padding: 9px 12px; border: 1px solid var(--cp-border); border-radius: 0.625rem; margin-bottom: 8px; background: var(--cp-bg-elevated); cursor: pointer; transition: border-color 0.15s, background 0.15s; }
+.check:hover { border-color: var(--cp-border-strong); }
+.check input { margin: 2px 0 0; width: 16px; height: 16px; accent-color: var(--cp-accent); flex: 0 0 auto; cursor: pointer; }
+.check span { font-size: 0.9rem; }
+.check.done { background: var(--cp-accent-soft); border-color: var(--cp-accent); }
+.check.done span { text-decoration: line-through; color: var(--cp-text-soft); }
+
+.tip { border-left: 3px solid var(--cp-accent); background: var(--cp-accent-soft); border-radius: 8px; padding: 10px 14px; margin-bottom: 10px; }
+.tip h4 { margin: 0 0 3px; font-size: 0.85rem; }
+.tip p { margin: 0; font-size: 0.85rem; color: var(--cp-text-muted); }
+
+.refs { display: flex; flex-wrap: wrap; gap: 8px; }
+.refs a { font-size: 0.82rem; text-decoration: none; border: 1px solid var(--cp-border); border-radius: 999px; padding: 5px 12px; color: var(--cp-link); background: var(--cp-surface); transition: border-color 0.15s; }
+.refs a:hover { border-color: var(--cp-accent); }
+
+.gen textarea { width: 100%; min-height: 240px; font-family: Consolas, "Courier New", Courier, monospace; font-size: 0.82rem; color: var(--cp-text); background: var(--cp-bg-elevated); border: 1px solid var(--cp-border); border-radius: 0.625rem; padding: 12px; resize: vertical; }
+.gen .gen-row { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+
+.hero h2 { font-size: 1.5rem; margin: 0 0 8px; }
+.hero .lead { color: var(--cp-text-muted); font-size: 0.95rem; max-width: 66ch; margin: 0 0 4px; }
+.how { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; margin: 18px 0; }
+.how .mini { border: 1px solid var(--cp-border); border-radius: 12px; padding: 14px; background: var(--cp-bg-elevated); }
+.how .mini .n { color: var(--cp-accent); font-weight: 700; font-size: 0.78rem; }
+.how .mini h4 { margin: 4px 0 4px; font-size: 0.92rem; }
+.how .mini p { margin: 0; font-size: 0.82rem; color: var(--cp-text-muted); }
+
+.meta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 600px) { .meta-grid { grid-template-columns: 1fr; } }
+
+.legend { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 10px; }
+.legend div { font-size: 0.82rem; color: var(--cp-text-muted); }
+
+.big-progress { display: flex; align-items: center; gap: 14px; margin: 6px 0 4px; }
+.big-progress .ring { font-size: 1.6rem; font-weight: 700; color: var(--cp-accent); font-variant-numeric: tabular-nums; }
+
+@media print {
+  header, nav.steps, .toolbar, .nav-buttons { display: none !important; }
+  .layout { display: block; max-width: none; padding: 0; }
+  .card { box-shadow: none; border: none; padding: 0; }
+}
 </style>
 </head>
 <body>
 <header>
   <div class="wrap">
-    <div>
-      <h1>Werkvoorbereider Agent Blueprint — Canvas</h1>
-      <div class="subtitle">Vul de 9 stappen in en exporteer je blueprint. Alles blijft lokaal in je browser.</div>
+    <div style="flex:1 1 auto; min-width:200px;">
+      <h1>Werkvoorbereider Agent — Bouwgids</h1>
+      <div class="subtitle">Van business én IT samen naar je eigen werkvoorbereidings-agent. In 9 stappen, met checklist en praktische tips. Alles blijft lokaal in je browser.</div>
     </div>
     <div class="toolbar">
+      <button id="btnStart" title="Naar startscherm">Overzicht</button>
       <button id="btnTheme" title="Wissel licht/donker">◐ Thema</button>
       <button id="btnImport">Importeren</button>
       <button id="btnJson">Export JSON</button>
@@ -187,18 +244,14 @@ a { color: var(--cp-link); }
 </header>
 
 <div class="layout">
-  <nav class="steps" id="nav">
-    <div class="progress-wrap">
-      <div class="progress-bar"><span id="progressFill"></span></div>
-      <div class="progress-label" id="progressLabel">0% ingevuld</div>
-    </div>
-  </nav>
+  <nav class="steps" id="nav"></nav>
   <main id="main"></main>
 </div>
 
 <div class="footer-note">
-  Gebaseerd op de blueprint in deze repository. Voorbeelden rond regelgeving (Bbl/NEN)
-  zijn illustratief — laat regelgeving altijd door een bevoegd persoon toetsen.
+  Gebaseerd op de blueprint in deze repository (zie de mappen <code>blueprint/</code>,
+  <code>best-practices/</code> en <code>referentie/</code>). Voorbeelden rond regelgeving
+  (Bbl/NEN) zijn illustratief — laat regelgeving altijd door een bevoegd persoon toetsen.
 </div>
 
 <div class="toast" id="toast"></div>
@@ -206,6 +259,24 @@ a { color: var(--cp-link); }
 <script>
 const STEPS = [
   { id: "00", title: "Context & ambitie", goal: "Bepaal wie je bent, waar je staat en wat je wilt bereiken.",
+    who: ["Business / WVB", "Management", "Consultant"],
+    intro: "Start samen. Bepaal je segment, hoe werkvoorbereiding nu is ingevuld, je ambitie (assisteren of automatiseren) en één meetbare succesmaat. Deze keuzes sturen alle volgende stappen.",
+    checklist: [
+      "Segment en type werk vastgelegd",
+      "Rolinvulling (welke fasen doet de WVB) beschreven",
+      "Digitaliseringsniveau ingeschat",
+      "Ambitie gekozen: assisteren of automatiseren",
+      "Randvoorwaarden (security, privacy, IT-beleid, budget) opgehaald bij IT",
+      "Eén meetbare succesmaat afgesproken"
+    ],
+    tips: [
+      { title: "Denk in Jobs-To-Be-Done", body: "Formuleer een taak als: wanneer ik (situatie), wil ik (actie), zodat (resultaat). Zo blijft de focus op de klus, niet op de tool." },
+      { title: "Klein en meetbaar", body: "Kies een succesmaat die je over 3 maanden kunt aantonen, bijvoorbeeld 3 uur per week minder zoekwerk per werkvoorbereider." }
+    ],
+    refs: [
+      { label: "Blueprint stap 00", href: "../blueprint/00-context-en-ambitie/README.md" },
+      { label: "Way of working", href: "../WAY-OF-WORKING.md" }
+    ],
     fields: [
       { id: "segment", label: "Segment", type: "text", hint: "B&U-woningbouw / B&U-utiliteit / GWW-infra / installatie E&W / onderhoud" },
       { id: "rol", label: "Rolinvulling", type: "textarea", hint: "Welke fasen doet jullie werkvoorbereider? (overdracht, werkvoorbereiding, uitvoering, oplevering)" },
@@ -215,11 +286,42 @@ const STEPS = [
       { id: "succesmaat", label: "Succesmaat (over 3 maanden)", type: "textarea", hint: "meetbaar, bv. 3 uur/week minder zoekwerk per WVB" }
     ]},
   { id: "01", title: "Rol- & taakanalyse", goal: "Breng de losse taken van de werkvoorbereider in kaart.",
+    who: ["Business / WVB", "Consultant"],
+    intro: "Breng de losse taken van de werkvoorbereider in kaart en scoor ze op pijn en waarde. De taken met de hoogste pijn keer waarde zijn je beste kandidaten voor een agent.",
+    checklist: [
+      "Taken per fase geïnventariseerd (overdracht, voorbereiding, uitvoering, oplevering)",
+      "Frequentie en tijd per keer geschat",
+      "Pijn (1-5) en waarde (1-5) per taak gescoord",
+      "Top 1-3 taken gekozen"
+    ],
+    tips: [
+      { title: "Laat de mensen zelf scoren", body: "Werkvoorbereiders die hun eigen taken scoren, geven nauwkeuriger input en voelen meer eigenaarschap." }
+    ],
+    refs: [
+      { label: "Blueprint stap 01", href: "../blueprint/01-rol-en-taakanalyse/README.md" },
+      { label: "Sub-agents (rolverdeling)", href: "../referentie/project-coach/sub-agents.md" }
+    ],
     fields: [
       { id: "taken", label: "Taken", type: "textarea", mono: true, hint: "Eén taak per regel: taak | fase | frequentie | tijd/keer | pijn (1-5) | waarde (1-5)" },
       { id: "toptaken", label: "Top-taken (hoogste pijn × waarde)", type: "textarea", hint: "De 1-3 taken die kandidaat zijn voor een agent" }
     ]},
   { id: "02", title: "Data-inventarisatie", goal: "Welke data raken de taken, waar staat het, hoe gevoelig.",
+    who: ["Business / WVB", "IT / Beheer"],
+    intro: "Bepaal welke data de gekozen taken raken, waar die staat en hoe gevoelig ze is. Scheid kennisbronnen (om te doorzoeken) van actiedata (om te lezen en schrijven).",
+    checklist: [
+      "Databronnen per taak in kaart gebracht",
+      "Kennisbronnen (RAG) gescheiden van actiedata (records)",
+      "Gevoeligheid per bron geclassificeerd",
+      "Data-kwaliteit en revisiebeheer beoordeeld"
+    ],
+    tips: [
+      { title: "Kennis versus actie", body: "Ongestructureerd (bestek, tekeningen, normen) gaat naar kennis/RAG. Gestructureerd (records, planning) lees of schrijf je via een koppeling." },
+      { title: "Schoon eerst op", body: "Verouderde revisies of dubbele documenten geven foute antwoorden. Ruim bronnen op vóór je ze indexeert." }
+    ],
+    refs: [
+      { label: "Blueprint stap 02", href: "../blueprint/02-data-inventarisatie/README.md" },
+      { label: "Best practice: data-design", href: "../best-practices/data-design.md" }
+    ],
     fields: [
       { id: "bronnen", label: "Databronnen", type: "textarea", mono: true, hint: "Eén bron per regel: bron | categorie A-H | locatie | formaat | structuur (G/S/O) | gevoeligheid" },
       { id: "kennis", label: "Kennisbronnen (ongestructureerd → RAG)", type: "textarea", hint: "Bronnen die de agent doorzoekt en samenvat" },
@@ -227,23 +329,93 @@ const STEPS = [
       { id: "aandacht", label: "Aandachtspunten data-kwaliteit & gevoeligheid", type: "textarea", hint: "Opschonen, revisiebeheer, afschermen" }
     ]},
   { id: "03", title: "Systeem-inventarisatie", goal: "Welke systemen en hoe koppelbaar (API/MCP/Dataverse/export).",
+    who: ["IT / Beheer", "Business / WVB", "Consultant"],
+    intro: "Dit is hét moment waarop business en IT samen beslissen welke systemen je koppelt en hoe: via API, MCP, Dataverse of een simpele export. Business brengt de behoefte, IT de haalbaarheid en de rechten.",
+    checklist: [
+      "Systemen per taak geïnventariseerd",
+      "Integratievorm per systeem bepaald (API / MCP / Dataverse / export)",
+      "Rechten en least privilege besproken met IT",
+      "Systeemeigenaar of beheerder per systeem benoemd",
+      "Quick wins gescheiden van obstakels"
+    ],
+    tips: [
+      { title: "Begin bij het koppelbare", body: "Start met systemen die nu koppelbaar zijn, zoals SharePoint en Dataverse. Parkeer complexe koppelingen voor later." },
+      { title: "Least privilege", body: "Geef de agent alleen de rechten die de gekozen use-case nodig heeft. Leg dit samen met IT vast." }
+    ],
+    refs: [
+      { label: "Blueprint stap 03", href: "../blueprint/03-systeem-inventarisatie/README.md" },
+      { label: "Best practice: data-design", href: "../best-practices/data-design.md" }
+    ],
     fields: [
       { id: "systemen", label: "Systemen", type: "textarea", mono: true, hint: "Eén per regel: systeem | functie | integratievorm | rechten | beheerder" },
       { id: "koppelbaar", label: "Koppelbaar nu (quick wins)", type: "textarea" },
       { id: "obstakels", label: "Nog niet koppelbaar / obstakels", type: "textarea" }
     ]},
   { id: "04", title: "Proces-mapping", goal: "Hoe loopt het werk nu; waar zit handwerk, wachttijd, fouten.",
+    who: ["Business / WVB", "Consultant"],
+    intro: "Teken uit hoe het werk nu loopt (as-is) en markeer waar tijd weglekt: handwerk, wachttijd en fouten. Bepaal per knelpunt of een agent moet assisteren (augment) of overnemen (automate).",
+    checklist: [
+      "Kernproces(sen) as-is uitgetekend",
+      "Handwerk, wachttijd en fouten gemarkeerd",
+      "Per knelpunt augment of automate bepaald"
+    ],
+    tips: [
+      { title: "Volg de waardestroom", body: "Loop het proces van overdracht tot oplevering en markeer elke plek waar tijd of kwaliteit weglekt." }
+    ],
+    refs: [
+      { label: "Blueprint stap 04", href: "../blueprint/04-proces-mapping/README.md" },
+      { label: "Best practice: proces-decompositie", href: "../best-practices/process-decomposition.md" }
+    ],
     fields: [
       { id: "proces", label: "Kernproces(sen) — stappen (as-is)", type: "textarea", hint: "Beschrijf het proces stap voor stap" },
       { id: "knelpunten", label: "Knelpunten + agent-kans", type: "textarea", hint: "Per knelpunt: type (handwerk/wachttijd/fout) en augment of automate" }
     ]},
   { id: "05", title: "Use-case prioritering", goal: "Kies waar je begint: waarde × haalbaarheid.",
+    who: ["Business / WVB", "Management", "Consultant"],
+    intro: "Kies waar je begint. Scoor de kandidaat-use-cases op waarde en haalbaarheid en pak er één tot drie om mee te starten. Bewijs eerst waarde, schaal daarna.",
+    checklist: [
+      "Kandidaat-use-cases verzameld",
+      "Waarde en haalbaarheid (1-5) per use-case gescoord",
+      "Startkeuze (1-3) onderbouwd",
+      "Definitie van klaar bepaald voor de eerste use-case"
+    ],
+    tips: [
+      { title: "Waarde keer haalbaarheid", body: "Kies een eerste use-case met hoge waarde én hoge haalbaarheid. Een snelle, zichtbare winst bouwt vertrouwen." }
+    ],
+    refs: [
+      { label: "Blueprint stap 05", href: "../blueprint/05-usecase-prioritering/README.md" },
+      { label: "Architectuur (use-cases)", href: "../referentie/project-coach/architectuur.md" }
+    ],
     fields: [
       { id: "kandidaten", label: "Kandidaat-use-cases", type: "textarea", mono: true, hint: "Eén per regel: use-case | waarde (1-5) | haalbaarheid (1-5) | type (augment/automate)" },
       { id: "startkeuze", label: "Startkeuze (1-3) + onderbouwing", type: "textarea" },
       { id: "klaar", label: "Definitie van 'klaar' voor de eerste use-case", type: "textarea" }
     ]},
   { id: "06", title: "Agent-ontwerp", goal: "Ontwerp instructies, kennis, tools, triggers en autonomie.",
+    who: ["Business / WVB", "Consultant", "IT / Beheer"],
+    intro: "Ontwerp de agent: doel en scope, instructies (ROCKET), kennisbronnen, tools, triggers, kanalen en autonomie. Gebruik de prompt-starter hieronder om snel een goede eerste instructie te maken.",
+    checklist: [
+      "Doel en scope bepaald (wat de agent wél en niet doet)",
+      "Instructie opgesteld volgens ROCKET",
+      "Kennisbronnen benoemd",
+      "Tools en acties beperkt tot wat de use-case nodig heeft",
+      "Mens-akkoord bepaald voor schrijfacties",
+      "Triggers en kanalen gekozen",
+      "Autonomieniveau gekozen",
+      "Spoor gekozen: Copilot Studio, Foundry of beide"
+    ],
+    tips: [
+      { title: "Gebruik de prompt-agent / prompt-optimizer", body: "Laat je platform meeschrijven: in Copilot Studio genereer je instructies vanuit een korte beschrijving; in Foundry gebruik je de prompt-optimizer. Verfijn het resultaat daarna met ROCKET." },
+      { title: "Noem tools bij hun exacte naam", body: "Verwijs in de instructie naar tools met hun precieze naam en beschrijf generiek wanneer de agent ze inzet." },
+      { title: "ROCKET als kapstok", body: "Role, Objective, Context, Key results, Examples, Tone. De generator hieronder zet je velden om in dit format." }
+    ],
+    refs: [
+      { label: "Blueprint stap 06", href: "../blueprint/06-agent-ontwerp/README.md" },
+      { label: "ROCKET-principe", href: "../referentie/rocket-principe.md" },
+      { label: "Best practice: Copilot Studio", href: "../best-practices/copilot-studio.md" },
+      { label: "Best practice: multi-agent", href: "../best-practices/multi-agent-orchestration.md" }
+    ],
+    prompt: true,
     fields: [
       { id: "doelscope", label: "Doel & scope", type: "textarea", hint: "Wat doet de agent wél en niet?" },
       { id: "instructies", label: "Instructies", type: "textarea", mono: true, hint: "Taal, toon, bron verplicht, geen aannames, wat NOOIT te doen" },
@@ -254,6 +426,24 @@ const STEPS = [
       { id: "spoor", label: "Gekozen spoor", type: "text", hint: "Copilot Studio / Foundry / beide" }
     ]},
   { id: "07", title: "Architectuur & integratie", goal: "Platform, kennisbronnen, koppelingen en security.",
+    who: ["IT / Beheer", "Consultant", "Security"],
+    intro: "Leg de technische inrichting vast: platformkeuze, hoe je kennisbronnen actueel en opgeschoond houdt, koppelingen met least privilege, security en logging.",
+    checklist: [
+      "Platform gekozen en onderbouwd",
+      "Kennisbronnen met revisie- en opschoonborging",
+      "Koppelingen met least privilege ingericht",
+      "Security en compliance geregeld (identiteit, DLP, gevoelige data)",
+      "Logging en traceerbaarheid ingericht"
+    ],
+    tips: [
+      { title: "Alleen actuele revisies", body: "Indexeer uitsluitend geaccordeerde, actuele revisies. Een agent mag nooit een verouderde revisie als waarheid presenteren." },
+      { title: "Zoned governance", body: "Scheid ontwikkel-, test- en productieomgevingen en gebruik DLP, Purview en Entra-groepen (zie stap 09)." }
+    ],
+    refs: [
+      { label: "Blueprint stap 07", href: "../blueprint/07-architectuur-en-integratie/README.md" },
+      { label: "Best practice: Copilot Studio", href: "../best-practices/copilot-studio.md" },
+      { label: "Architectuur", href: "../referentie/project-coach/architectuur.md" }
+    ],
     fields: [
       { id: "platform", label: "Platformkeuze + onderbouwing", type: "textarea" },
       { id: "kennisidx", label: "Kennisbronnen + revisie-/opschoonborging", type: "textarea", hint: "Alleen actuele, geaccordeerde revisies indexeren" },
@@ -262,12 +452,45 @@ const STEPS = [
       { id: "logging", label: "Logging & traceerbaarheid", type: "textarea" }
     ]},
   { id: "08", title: "Bouwen & testen", goal: "Bouw een MVP en meet de kwaliteit met een testset.",
+    who: ["Consultant", "Business / WVB", "IT / Beheer"],
+    intro: "Bouw de kleinste waardevolle versie (MVP) en meet de kwaliteit met een vaste testset, inclusief negatieve tests. Ga pas verder als je de kwaliteitsdrempel haalt.",
+    checklist: [
+      "MVP-scope bepaald (en wat er bewust NIET in zit)",
+      "Testset met positieve én negatieve tests opgesteld",
+      "Kwaliteitsdrempel afgesproken",
+      "Testmethode gekozen (bijvoorbeeld Copilot Studio-evaluaties)"
+    ],
+    tips: [
+      { title: "Bouw klein, test hard", body: "Begin met de kleinste versie die waarde levert en meet met een vaste testset voordat je uitbreidt." },
+      { title: "Neem negatieve tests op", body: "Test ook vragen waarop de agent hoort te zeggen dat hij het niet weet. Zo voorkom je verzonnen antwoorden." },
+      { title: "Moderne Copilot Studio-agents bouw je in de UI", body: "Een moderne agent richt je in via de Copilot Studio-portal; een volledige round-trip via pac is niet ondersteund." }
+    ],
+    refs: [
+      { label: "Blueprint stap 08", href: "../blueprint/08-bouwen-en-testen/README.md" },
+      { label: "Best practice: Copilot Studio", href: "../best-practices/copilot-studio.md" }
+    ],
     fields: [
       { id: "mvp", label: "MVP-scope", type: "textarea", hint: "Kleinste waardevolle versie; wat bewust NIET in de MVP" },
       { id: "testset", label: "Testset", type: "textarea", mono: true, hint: "Eén per regel: vraag | verwacht antwoord/gedrag | grader. Neem negatieve tests op!" },
       { id: "drempel", label: "Kwaliteitsdrempel", type: "textarea", hint: "Bv. >90% correct, 100% bronvermelding, 0 hallucinaties op negatieve tests" }
     ]},
   { id: "09", title: "Governance & adoptie", goal: "Verantwoord uitrollen, compliant houden en meten.",
+    who: ["Management", "IT / Beheer", "Security", "Business / WVB"],
+    intro: "Rol verantwoord uit en houd de agent compliant. Regel governance en ALM, adoptie (pilot, training, feedback, eigenaar) en KPI's die aansluiten op je succesmaat uit stap 00.",
+    checklist: [
+      "Verantwoorde-AI-afspraken vastgelegd (bronvermelding, mens-in-de-loop, logging)",
+      "Compliance geborgd (regelgeving actueel, revisiebeheer, AVG, EU AI Act)",
+      "Governance en ALM ingericht (zoned, 3 omgevingen, DLP, Purview, Entra)",
+      "Adoptieplan gemaakt (pilot, training, feedbacklus, eigenaar)",
+      "KPI's gekoppeld aan de succesmaat uit stap 00"
+    ],
+    tips: [
+      { title: "Wijs een eigenaar aan", body: "Eén eigenaar die de agent onderhoudt en de feedbacklus draait, voorkomt dat een succesvolle pilot stilvalt." }
+    ],
+    refs: [
+      { label: "Blueprint stap 09", href: "../blueprint/09-governance-en-adoptie/README.md" },
+      { label: "Best practice: Microsoft-alignment", href: "../best-practices/microsoft-alignment.md" }
+    ],
     fields: [
       { id: "verantwoord", label: "Verantwoorde AI", type: "textarea", hint: "Bronvermelding, mens-in-de-loop, geen hallucinatie, logging" },
       { id: "compliance", label: "Compliance (bouw)", type: "textarea", hint: "Regelgeving actueel, revisiebeheer, aansprakelijkheid, AVG, EU AI Act" },
@@ -276,89 +499,323 @@ const STEPS = [
     ]}
 ];
 
-const STORAGE_KEY = "wvb-blueprint-canvas-v1";
+const WELCOME = {
+  metaFields: [
+    { id: "bedrijf", label: "Bedrijf / segment", hint: "Bijv. Aannemer X — B&U-woningbouw" },
+    { id: "facilitator", label: "Facilitator", hint: "Wie begeleidt deze sessie?" },
+    { id: "datum", label: "Datum", hint: "Sessiedatum" },
+    { id: "deelnemers", label: "Deelnemers (business · IT · consultant)", hint: "Wie zit er aan tafel?" }
+  ]
+};
+
+const STORAGE_KEY = "wvb-blueprint-canvas-v2";
+const LEGACY_KEY = "wvb-blueprint-canvas-v1";
+let meta = {};
 let data = {};
-let current = 0;
+let checks = {};
+let current = -1; // -1 = startscherm
 
 function load() {
-  try { data = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
-  catch { data = {}; }
+  try {
+    const raw = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    if (raw && typeof raw === "object") {
+      meta = raw.meta || {}; data = raw.data || {}; checks = raw.checks || {};
+      return;
+    }
+  } catch {}
+  try {
+    const old = JSON.parse(localStorage.getItem(LEGACY_KEY));
+    if (old && typeof old === "object") { data = old; }
+  } catch {}
 }
-function save() { localStorage.setItem(STORAGE_KEY, JSON.stringify(data)); updateProgress(); }
+function save() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({ version: 2, meta, data, checks }));
+  updateProgress();
+}
 
 function key(step, field) { return step.id + "." + field.id; }
+function checkKey(step, i) { return step.id + ".chk." + i; }
 
-function stepFilled(step) { return step.fields.some(f => (data[key(step, f)] || "").trim().length > 0); }
+function stepStarted(step) {
+  const anyField = step.fields.some(f => (data[key(step, f)] || "").trim().length > 0);
+  const anyCheck = (step.checklist || []).some((_, i) => checks[checkKey(step, i)]);
+  return anyField || anyCheck;
+}
+
+function counts() {
+  let total = 0, filled = 0;
+  STEPS.forEach(s => {
+    total += s.fields.length;
+    filled += s.fields.filter(f => (data[key(s, f)] || "").trim().length > 0).length;
+    (s.checklist || []).forEach((_, i) => { total++; if (checks[checkKey(s, i)]) filled++; });
+  });
+  return { total, filled, pct: total ? Math.round(filled / total * 100) : 0 };
+}
 
 function updateProgress() {
-  const total = STEPS.reduce((n, s) => n + s.fields.length, 0);
-  const filled = STEPS.reduce((n, s) => n + s.fields.filter(f => (data[key(s, f)] || "").trim().length > 0).length, 0);
-  const pct = total ? Math.round((filled / total) * 100) : 0;
-  document.getElementById("progressFill").style.width = pct + "%";
-  document.getElementById("progressLabel").textContent = pct + "% ingevuld (" + filled + "/" + total + " velden)";
+  const c = counts();
+  const fill = document.getElementById("progressFill");
+  const label = document.getElementById("progressLabel");
+  if (fill) fill.style.width = c.pct + "%";
+  if (label) label.textContent = c.pct + "% compleet (" + c.filled + "/" + c.total + ")";
   document.querySelectorAll("nav.steps button[data-step]").forEach(btn => {
     const s = STEPS[+btn.dataset.step];
     const dot = btn.querySelector(".dot");
-    dot.classList.toggle("filled", stepFilled(s));
+    if (dot) dot.classList.toggle("filled", stepStarted(s));
   });
+  const ring = document.getElementById("bigPct");
+  if (ring) ring.textContent = c.pct + "%";
 }
+
+function go(idx) { current = idx; renderNav(); renderMain(); window.scrollTo({ top: 0, behavior: "smooth" }); }
 
 function renderNav() {
   const nav = document.getElementById("nav");
-  const progress = nav.querySelector(".progress-wrap");
   nav.innerHTML = "";
+  const start = document.createElement("button");
+  start.className = "start-btn" + (current === -1 ? " active" : "");
+  start.textContent = "Start hier";
+  start.onclick = () => go(-1);
+  nav.appendChild(start);
+  const heading = document.createElement("div");
+  heading.className = "nav-heading";
+  heading.textContent = "9 stappen";
+  nav.appendChild(heading);
   STEPS.forEach((s, i) => {
     const b = document.createElement("button");
     b.dataset.step = i;
     b.className = i === current ? "active" : "";
     b.innerHTML = '<span class="num">' + s.id + '</span><span>' + s.title + '</span><span class="dot"></span>';
-    b.onclick = () => { current = i; renderNav(); renderMain(); window.scrollTo({ top: 0, behavior: "smooth" }); };
+    b.onclick = () => go(i);
     nav.appendChild(b);
   });
-  nav.appendChild(progress);
+  const pw = document.createElement("div");
+  pw.className = "progress-wrap";
+  pw.innerHTML = '<div class="progress-bar"><span id="progressFill"></span></div><div class="progress-label" id="progressLabel"></div>';
+  nav.appendChild(pw);
   updateProgress();
 }
 
+function badges(who) {
+  if (!who || !who.length) return "";
+  return '<div class="badges">' + who.map((w, i) =>
+    '<span class="badge' + (i === 0 ? '' : ' soft') + '">' + w + '</span>').join("") + '</div>';
+}
+
 function renderMain() {
+  if (current === -1) return renderWelcome();
+  return renderStep();
+}
+
+function renderWelcome() {
+  const main = document.getElementById("main");
+  const c = counts();
+  const card = document.createElement("div");
+  card.className = "card hero";
+  let html = "";
+  html += '<h2>Bouw samen je werkvoorbereidings-agent</h2>';
+  html += '<p class="lead">Deze gids brengt <strong>business (werkvoorbereiding en uitvoering)</strong> en <strong>IT / beheer</strong> samen aan tafel. In 9 stappen bepaal je welke taken een agent overneemt, welke systemen je koppelt en hoe je verantwoord live gaat. Vul in wat past bij jouw bedrijf; een consultant kan alles verfijnen.</p>';
+  html += '<div class="big-progress"><span class="ring" id="bigPct">' + c.pct + '%</span><span style="color:var(--cp-text-muted);font-size:0.9rem;">compleet. Je kunt op elk moment exporteren (Markdown of JSON) en later verdergaan. Alles blijft lokaal in deze browser.</span></div>';
+  html += '<div class="how">';
+  [
+    ["1", "Doorloop de 9 stappen", "Van context en taken tot governance, samen: business én IT."],
+    ["2", "Vink de checklist af", "Elke stap heeft een checklist zodat je niets vergeet."],
+    ["3", "Leg keuzes vast", "Vul de velden in; samen vormen ze je blueprint."],
+    ["4", "Exporteer je blueprint", "Als Markdown (deelbaar) of JSON (om verder te werken)."]
+  ].forEach(m => {
+    html += '<div class="mini"><div class="n">' + m[0] + '</div><h4>' + m[1] + '</h4><p>' + m[2] + '</p></div>';
+  });
+  html += '</div>';
+  html += '<div class="section"><div class="section-title">Sessie-gegevens</div><div class="meta-grid" id="metaGrid"></div></div>';
+  html += '<div class="section"><div class="section-title">Wie doet wat?</div>';
+  html += '<p class="intro">Bij elke stap staat wie je nodig hebt. De business brengt de behoefte en kennis van het werk; IT / beheer bepaalt haalbaarheid, koppelingen en rechten; een consultant of maker helpt met ontwerp en bouw.</p>';
+  html += '<div class="legend"><div><strong>Business / WVB</strong> — kennis van het werk</div><div><strong>IT / Beheer</strong> — systemen, koppelingen, rechten</div><div><strong>Consultant / Maker</strong> — ontwerp en bouw</div></div></div>';
+  html += '<div class="section"><div class="section-title">Meer lezen</div><div class="refs"><a href="../README.md" target="_blank" rel="noopener">Repo-overzicht</a><a href="../WAY-OF-WORKING.md" target="_blank" rel="noopener">Way of working</a><a href="../best-practices/README.md" target="_blank" rel="noopener">Best practices</a></div></div>';
+  card.innerHTML = html;
+
+  const grid = card.querySelector("#metaGrid");
+  WELCOME.metaFields.forEach(f => {
+    const wrap = document.createElement("div");
+    wrap.className = "field";
+    wrap.innerHTML = '<label>' + f.label + '</label>' + (f.hint ? '<span class="hint">' + f.hint + '</span>' : "");
+    const inp = document.createElement("input");
+    inp.type = "text"; inp.value = meta[f.id] || "";
+    inp.oninput = () => { meta[f.id] = inp.value; save(); };
+    wrap.appendChild(inp);
+    grid.appendChild(wrap);
+  });
+
+  const nb = document.createElement("div");
+  nb.className = "nav-buttons";
+  nb.appendChild(document.createElement("span"));
+  const next = document.createElement("button");
+  next.className = "primary";
+  next.textContent = "Begin bij stap 00 ›";
+  next.onclick = () => go(0);
+  nb.appendChild(next);
+  card.appendChild(nb);
+
+  main.innerHTML = "";
+  main.appendChild(card);
+}
+
+function renderStep() {
   const s = STEPS[current];
   const main = document.getElementById("main");
   const card = document.createElement("div");
   card.className = "card";
-  card.innerHTML = '<h2>' + s.id + ' — ' + s.title + '</h2><p class="goal">' + s.goal + '</p>';
+  card.innerHTML = '<h2>' + s.id + ' — ' + s.title + '</h2>' + badges(s.who) + '<p class="goal">' + s.goal + '</p>';
+
+  if (s.intro) {
+    const sec = document.createElement("div");
+    sec.className = "section";
+    sec.innerHTML = '<div class="section-title">Wat ga je doen</div><p class="intro">' + s.intro + '</p>';
+    card.appendChild(sec);
+  }
+
+  if (s.checklist && s.checklist.length) {
+    const sec = document.createElement("div");
+    sec.className = "section";
+    sec.innerHTML = '<div class="section-title">Checklist</div>';
+    s.checklist.forEach((item, i) => {
+      const row = document.createElement("label");
+      const done = !!checks[checkKey(s, i)];
+      row.className = "check" + (done ? " done" : "");
+      const cb = document.createElement("input");
+      cb.type = "checkbox"; cb.checked = done;
+      const span = document.createElement("span"); span.textContent = item;
+      cb.onchange = () => { checks[checkKey(s, i)] = cb.checked; row.classList.toggle("done", cb.checked); save(); };
+      row.appendChild(cb); row.appendChild(span);
+      sec.appendChild(row);
+    });
+    card.appendChild(sec);
+  }
+
+  const fsec = document.createElement("div");
+  fsec.className = "section";
+  fsec.innerHTML = '<div class="section-title">Leg vast</div>';
   s.fields.forEach(f => {
     const wrap = document.createElement("div");
     wrap.className = "field" + (f.mono ? " mono" : "");
     const val = data[key(s, f)] || "";
     const hint = f.hint ? '<span class="hint">' + f.hint + '</span>' : "";
+    wrap.innerHTML = '<label>' + f.label + '</label>' + hint;
     if (f.type === "text") {
-      wrap.innerHTML = '<label>' + f.label + '</label>' + hint;
       const inp = document.createElement("input");
       inp.type = "text"; inp.value = val;
       inp.oninput = () => { data[key(s, f)] = inp.value; save(); };
       wrap.appendChild(inp);
     } else {
-      wrap.innerHTML = '<label>' + f.label + '</label>' + hint;
       const ta = document.createElement("textarea");
       ta.value = val;
       ta.oninput = () => { data[key(s, f)] = ta.value; save(); };
       wrap.appendChild(ta);
     }
-    card.appendChild(wrap);
+    fsec.appendChild(wrap);
   });
+  card.appendChild(fsec);
+
+  if (s.prompt) {
+    const sec = document.createElement("div");
+    sec.className = "section gen";
+    sec.innerHTML = '<div class="section-title">Prompt-starter (ROCKET)</div>' +
+      '<p class="intro">Genereer een start-instructie uit je ingevulde velden. Plak deze in Copilot Studio of Foundry en verfijn hem daar met de prompt-optimizer.</p>';
+    const ta = document.createElement("textarea");
+    ta.readOnly = true;
+    ta.placeholder = "Klik op Genereer om een start-instructie te maken uit stap 00, 05 en 06.";
+    const row = document.createElement("div"); row.className = "gen-row";
+    const genBtn = document.createElement("button"); genBtn.className = "primary"; genBtn.textContent = "Genereer";
+    genBtn.onclick = () => { ta.value = buildRocketPrompt(); toast("Start-instructie gegenereerd"); };
+    const copyBtn = document.createElement("button"); copyBtn.textContent = "Kopieer";
+    copyBtn.onclick = () => {
+      if (!ta.value) ta.value = buildRocketPrompt();
+      ta.select();
+      try { navigator.clipboard.writeText(ta.value); } catch (e) { document.execCommand("copy"); }
+      toast("Gekopieerd naar klembord");
+    };
+    row.appendChild(genBtn); row.appendChild(copyBtn);
+    sec.appendChild(ta); sec.appendChild(row);
+    card.appendChild(sec);
+  }
+
+  if (s.tips && s.tips.length) {
+    const sec = document.createElement("div");
+    sec.className = "section";
+    sec.innerHTML = '<div class="section-title">Praktische tips</div>';
+    s.tips.forEach(t => {
+      const d = document.createElement("div");
+      d.className = "tip";
+      d.innerHTML = '<h4></h4><p></p>';
+      d.querySelector("h4").textContent = t.title;
+      d.querySelector("p").textContent = t.body;
+      sec.appendChild(d);
+    });
+    card.appendChild(sec);
+  }
+
+  if (s.refs && s.refs.length) {
+    const sec = document.createElement("div");
+    sec.className = "section";
+    sec.innerHTML = '<div class="section-title">Verdieping in deze repo</div>';
+    const refs = document.createElement("div");
+    refs.className = "refs";
+    s.refs.forEach(r => {
+      const a = document.createElement("a");
+      a.href = r.href; a.textContent = r.label; a.target = "_blank"; a.rel = "noopener";
+      refs.appendChild(a);
+    });
+    sec.appendChild(refs);
+    card.appendChild(sec);
+  }
+
   const nb = document.createElement("div");
   nb.className = "nav-buttons";
   const prev = document.createElement("button");
-  prev.textContent = "‹ Vorige";
-  prev.disabled = current === 0;
-  prev.onclick = () => { if (current > 0) { current--; renderNav(); renderMain(); window.scrollTo({top:0,behavior:"smooth"}); } };
+  prev.textContent = current === 0 ? "‹ Start" : "‹ Vorige";
+  prev.onclick = () => go(current - 1);
   const next = document.createElement("button");
-  next.textContent = current === STEPS.length - 1 ? "Klaar" : "Volgende ›";
   next.className = "primary";
-  next.onclick = () => { if (current < STEPS.length - 1) { current++; renderNav(); renderMain(); window.scrollTo({top:0,behavior:"smooth"}); } };
+  next.textContent = current === STEPS.length - 1 ? "Klaar — exporteer" : "Volgende ›";
+  next.onclick = () => { if (current === STEPS.length - 1) exportMarkdown(); else go(current + 1); };
   nb.appendChild(prev); nb.appendChild(next);
   card.appendChild(nb);
+
   main.innerHTML = "";
   main.appendChild(card);
+}
+
+function buildRocketPrompt() {
+  const g = (sid, fid) => (data[sid + "." + fid] || "").trim();
+  const segment = g("00", "segment");
+  const start = g("05", "startkeuze");
+  const doel = g("06", "doelscope");
+  const instr = g("06", "instructies");
+  const kennis = g("06", "kennisbr");
+  const tools = g("06", "tools");
+  const triggers = g("06", "triggers");
+  const auto = g("06", "autonomie");
+  const L = [];
+  L.push("# Rol");
+  L.push("Je bent een werkvoorbereidings-assistent" + (segment ? " voor een bedrijf in het segment: " + segment : "") + ".");
+  L.push("");
+  L.push("# Objective (doel)");
+  L.push(doel || "[Beschrijf wat de agent wel en niet doet]");
+  L.push("");
+  L.push("# Context");
+  L.push(start || "[Beschrijf de gekozen use-case en situatie]");
+  if (kennis) L.push("Kennisbronnen: " + kennis);
+  if (tools) L.push("Beschikbare tools/acties: " + tools);
+  if (triggers) L.push("Triggers: " + triggers);
+  L.push("");
+  L.push("# Key results (gedragsregels)");
+  L.push(instr || "- Antwoord in het Nederlands.\n- Onderbouw elk antwoord met bronnen; verzin niets.\n- Vraag om bevestiging voordat je iets wegschrijft.");
+  L.push("");
+  L.push("# Examples");
+  L.push("[Geef 1-2 voorbeeldvragen met het gewenste antwoord]");
+  L.push("");
+  L.push("# Tone");
+  L.push("Professioneel, bondig en bouwplaats-praktisch." + (auto ? " Autonomie: " + auto + "." : ""));
+  return L.join("\n");
 }
 
 function toast(msg) {
@@ -376,25 +833,41 @@ function download(filename, text, type) {
 }
 
 function exportMarkdown() {
-  let md = "# Werkvoorbereider Agent Blueprint — ingevulde canvas\n\n";
-  md += "_Gegenereerd: " + new Date().toLocaleString("nl-NL") + "_\n\n";
+  let md = "# Werkvoorbereider Agent — ingevulde bouwgids\n\n";
+  if (meta.bedrijf) md += "**Bedrijf / segment:** " + meta.bedrijf + "  \n";
+  if (meta.facilitator) md += "**Facilitator:** " + meta.facilitator + "  \n";
+  if (meta.datum) md += "**Datum:** " + meta.datum + "  \n";
+  if (meta.deelnemers) md += "**Deelnemers:** " + meta.deelnemers + "  \n";
+  md += "\n_Gegenereerd: " + new Date().toLocaleString("nl-NL") + "_\n\n";
+  const c = counts();
+  md += "Voortgang: " + c.pct + "% (" + c.filled + "/" + c.total + ")\n\n";
   STEPS.forEach(s => {
     md += "## Stap " + s.id + " — " + s.title + "\n\n";
+    if (s.who) md += "_Aan tafel: " + s.who.join(", ") + "_\n\n";
+    if (s.checklist && s.checklist.length) {
+      md += "**Checklist**\n\n";
+      s.checklist.forEach((item, i) => {
+        md += "- [" + (checks[checkKey(s, i)] ? "x" : " ") + "] " + item + "\n";
+      });
+      md += "\n";
+    }
     s.fields.forEach(f => {
       const val = (data[key(s, f)] || "").trim();
       md += "### " + f.label + "\n\n" + (val ? val : "_(niet ingevuld)_") + "\n\n";
     });
   });
   md += "---\n\n> Voorbeelden rond regelgeving zijn illustratief; laat regelgeving door een bevoegd persoon toetsen.\n";
-  download("blueprint-canvas.md", md, "text/markdown");
+  download("werkvoorbereider-blueprint.md", md, "text/markdown");
   toast("Markdown geëxporteerd");
 }
 
 function exportJson() {
-  download("blueprint-canvas.canvas.json", JSON.stringify(data, null, 2), "application/json");
+  const payload = { version: 2, exportedAt: new Date().toISOString(), meta, data, checks };
+  download("werkvoorbereider-blueprint.json", JSON.stringify(payload, null, 2), "application/json");
   toast("JSON geëxporteerd");
 }
 
+document.getElementById("btnStart").onclick = () => go(-1);
 document.getElementById("btnMd").onclick = exportMarkdown;
 document.getElementById("btnJson").onclick = exportJson;
 document.getElementById("btnImport").onclick = () => document.getElementById("fileInput").click();
@@ -403,14 +876,20 @@ document.getElementById("fileInput").onchange = (e) => {
   if (!file) return;
   const reader = new FileReader();
   reader.onload = () => {
-    try { data = JSON.parse(reader.result); save(); renderNav(); renderMain(); toast("Canvas geïmporteerd"); }
-    catch { toast("Ongeldig JSON-bestand"); }
+    try {
+      const parsed = JSON.parse(reader.result);
+      if (parsed && parsed.data) { meta = parsed.meta || {}; data = parsed.data || {}; checks = parsed.checks || {}; }
+      else { data = parsed || {}; }
+      save(); renderNav(); renderMain(); toast("Blueprint geïmporteerd");
+    } catch (err) { toast("Ongeldig JSON-bestand"); }
   };
   reader.readAsText(file);
   e.target.value = "";
 };
 document.getElementById("btnReset").onclick = () => {
-  if (confirm("Alle ingevulde velden wissen?")) { data = {}; save(); renderNav(); renderMain(); toast("Canvas gewist"); }
+  if (confirm("Alle ingevulde velden, checklists en sessie-gegevens wissen?")) {
+    meta = {}; data = {}; checks = {}; save(); renderNav(); renderMain(); toast("Alles gewist");
+  }
 };
 document.getElementById("btnTheme").onclick = () => {
   const cur = document.documentElement.getAttribute("data-theme");
