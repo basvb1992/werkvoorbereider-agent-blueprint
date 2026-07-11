@@ -83,9 +83,12 @@ demo-omgeving.
 | [meerminderwerk-agent.md](meerminderwerk-agent.md) | Meer-/minderwerk (augment→automate) |
 | [project-coach-orchestrator.md](project-coach-orchestrator.md) | Project Coach (orchestrator, connected agents) |
 
-> **Status:** Bestek + Inkoop zijn **live gebouwd**; de Dataverse-datalaag voor
-> Planning/Mensen/Oplever/Meer-/minderwerk is **live gescaffold**. De agents zelf bouw
-> je in de Copilot Studio-UI met deze kits (moderne agents: geen `pac copilot push`).
+> **Status:** het **volledige team is live gebouwd en gepubliceerd** in de demo-omgeving:
+> alle 7 sub-agents (Bestek, Inkoop, Compliance, Planning, Mensen, Oplever,
+> Meer-/minderwerk) én de **Project Coach**-orchestrator, die ze als *connected agents*
+> aanstuurt — de orchestrator routeert in Preview naar de juiste sub-agent (smoketest).
+> De Dataverse-datalaag is **live gescaffold**. Zelf bouw je de agents in de Copilot
+> Studio-UI met deze kits (moderne agents: geen `pac copilot push`).
 
 ## Vooraf (prerequisites)
 

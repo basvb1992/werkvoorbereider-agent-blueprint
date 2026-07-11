@@ -30,20 +30,22 @@ Kandidaten voor een volgende ronde:
 
 - **Fase B: werkende demo (Bestek, augment/kennis) — runbook klaar.** Staat in
   [referentie/implementatie-voorbeeld/](referentie/implementatie-voorbeeld/README.md).
-- **Fase C: automate-met-controle (Inkoop) — GESTART.** Runbook, ROCKET-instructie,
+- **Fase C: automate-met-controle (Inkoop) — LIVE.** Runbook, ROCKET-instructie,
   testset, [Dataverse-ontwerp](referentie/implementatie-voorbeeld/inkoop-dataverse-design.md)
   en een **idempotent scaffold-script** (Web API) staan klaar. De schrijf-actie maakt
-  een **concept-inkoopaanvraag** (status `Concept`) met bevestiging. Volgende:
-  Dataverse live scaffolden en de agent in de demo-omgeving bouwen.
+  een **concept-inkoopaanvraag** (status `Concept`) met bevestiging. De Dataverse-tabellen
+  zijn live gescaffold en de agent is live gebouwd; de gated write is beproefd.
 - **Documentlaag — SharePoint (demo).** Runbook voor SharePoint als **kennisbron**
   (Bestek-agent) én **projectmap-provisioning** (automate met controle) staat in
   [referentie/implementatie-voorbeeld/sharepoint-documenten.md](referentie/implementatie-voorbeeld/sharepoint-documenten.md).
-  Volgende: live koppelen van de kennisbron en de provisioning-flow bouwen.
+  De kennisbron is live aan de Bestek-agent gekoppeld; de projectmap-structuur is via
+  het scaffold-script (Graph) aangemaakt.
 - **Overige agents — build-kits + datalaag.** Build-kits (ROCKET + tools + testset) voor
   Compliance / Planning / Mensen / Oplever / Meer-/minderwerk + de Project Coach-
   orchestrator staan in [referentie/implementatie-voorbeeld/](referentie/implementatie-voorbeeld/README.md);
-  de Dataverse-datalaag (6 tabellen) is scriptbaar en **live gescaffold**. Volgende:
-  de agents in de Copilot Studio-UI bouwen + publiceren, dan de orchestrator koppelen.
+  de Dataverse-datalaag (6 tabellen) is scriptbaar en **live gescaffold**. Alle agents
+  zijn live gebouwd + gepubliceerd en de Project Coach koppelt ze als *connected agents*
+  (routing-smoketest in Preview geslaagd).
 - **ROCKET-interpretatie VASTGESTELD (optie B):** Role · Objective · Context ·
   **Knowledge** · **Expectations** · Tone. `referentie/rocket-principe.md` bijgewerkt; de
   live agents volgen deze indeling.
