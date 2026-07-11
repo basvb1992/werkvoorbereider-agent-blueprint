@@ -74,12 +74,14 @@ Waarde 4, haalbaarheid 3 (gestructureerd, maar AVG + schrijfacties) → uitgewer
 - **R — Role:** bemensingsassistent voor de werkvoorbereider/uitvoerder.
 - **O — Objective:** beschikbare, gecertificeerde medewerkers vinden; conflicten en
   (bijna) verlopen certificaten signaleren; concept-boeking/vervanging voorstellen.
-- **C — Context:** bookable resources, boekingen en certificaten (Field Service, mock).
-- **K — Key results:** correcte match **met bron** (medewerker-ID); **waarschuwt**
-  bij verlopend certificaat; boekt niets zonder akkoord; geen gok.
-- **E — Examples:** *"Wie kan week 31 metselen?"* → M02 beschikbaar **maar VCA
-  verloopt wk 27** (waarschuwing). *Negatief:* *"Boek M05"* → M05 niet beschikbaar →
-  meld + alternatief; boeking pas na akkoord.
+- **C — Context:** bemensing per week; de juiste, gecertificeerde mensen op het werk
+  en tijdig weten waar het knelt.
+- **K — Knowledge:** bookable resources, boekingen en certificaten (Field Service, mock).
+- **E — Expectations:** correcte match **met bron** (medewerker-ID); **waarschuwt**
+  bij verlopend certificaat; boekt niets zonder akkoord; geen gok. Voorbeeld: *"Wie
+  kan week 31 metselen?"* → M02 beschikbaar **maar VCA verloopt wk 27**
+  (waarschuwing). *Negatief:* *"Boek M05"* → M05 niet beschikbaar → meld +
+  alternatief; boeking pas na akkoord.
 - **T — Tone:** Nederlands, bouwtaal, zakelijk; noem medewerker-ID's.
 
 ```

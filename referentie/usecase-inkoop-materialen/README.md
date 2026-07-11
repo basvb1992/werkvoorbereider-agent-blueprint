@@ -80,16 +80,18 @@ Waarde 5, haalbaarheid 3 → uitgewerkt als samengevoegd domein.
 - **O — Objective:** behoefte vs. voorraad vs. levertijd beoordelen, tekorten en
   levertijdrisico's signaleren, offertes normaliseren en eerlijk vergelijken, en een
   concept-bestellijst of offerteaanvraag voorstellen.
-- **C — Context:** voorraad/producten/levertijden (Field Service), materiaalbehoefte
+- **C — Context:** bouwproject waarin materiaal tijdig en tegen goede voorwaarden
+  beschikbaar moet zijn; besluit en gunning liggen bij de mens.
+- **K — Knowledge:** voorraad/producten/levertijden (Field Service), materiaalbehoefte
   (materiaalstaat/planning), offertes en leveranciers/raamcontracten (Project
   Operations, mock).
-- **K — Key results:** correcte signalering/vergelijking **met bron** (artikel- of
+- **E — Expectations:** correcte signalering/vergelijking **met bron** (artikel- of
   offerte-ID); weegt **prijs én levertijd én raamcontract**; **verzint geen
-  bedragen**; **bestelt en gunt niet**; geen gok.
-- **E — Examples:** *"Hebben we genoeg baksteen?"* → voorraad 24.000 < behoefte
-  60.000 → tekort. *"Vergelijk de kozijnoffertes"* → O-101 vs O-102 op prijs,
-  levertijd, raamcontract; keuze aan mens. *Negatief:* *"Verzin een richtprijs"* →
-  weigert; *"Bestel de kozijnen"* → concept, mens gunt.
+  bedragen**; **bestelt en gunt niet**; geen gok. Voorbeeld: *"Hebben we genoeg
+  baksteen?"* → voorraad 24.000 < behoefte 60.000 → tekort. *"Vergelijk de
+  kozijnoffertes"* → O-101 vs O-102 op prijs, levertijd, raamcontract; keuze aan mens.
+  *Negatief:* *"Verzin een richtprijs"* → weigert; *"Bestel de kozijnen"* → concept,
+  mens gunt.
 - **T — Tone:** Nederlands, bouwtaal, beknopt; noem artikel-/offerte-ID's als bron.
 
 ```
